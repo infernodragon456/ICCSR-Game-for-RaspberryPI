@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtweebu273d0h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4lxs6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axhjm"]
+
+[node name="Button" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4lxs6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_axhjm")

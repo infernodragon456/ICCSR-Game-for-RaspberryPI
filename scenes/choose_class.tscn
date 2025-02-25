@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0g3g4edj5nu"]
+
+[ext_resource type="Texture2D" uid="uid://ciyppxt5i538g" path="res://assets/choose_class_bg.png" id="1_3je1o"]
+[ext_resource type="PackedScene" uid="uid://dtweebu273d0h" path="res://scenes/class_button.tscn" id="2_nmw5g"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7uvk5"]
+texture = ExtResource("1_3je1o")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cr6xk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_541mk"]
+
+[node name="ChooseClass" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_7uvk5")
+
+[node name="Button" parent="." instance=ExtResource("2_nmw5g")]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 280.0
+offset_right = 343.0
+offset_bottom = 388.0
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cr6xk")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_541mk")
