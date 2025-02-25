@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7av8ipm0y6w5"]
+
+[ext_resource type="Texture2D" uid="uid://cwa6lf3mjlvnw" path="res://assets/Exit.png" id="1_a0brh"]
+[ext_resource type="Script" path="res://scenes/exit.gd" id="2_64fv4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_18ddu"]
+texture = ExtResource("1_a0brh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4xo43"]
+texture = ExtResource("1_a0brh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_flfub"]
+texture = ExtResource("1_a0brh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_avt1c"]
+texture = ExtResource("1_a0brh")
+
+[node name="Exit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1006.0
+offset_top = 25.0
+offset_right = 1126.0
+offset_bottom = 78.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_18ddu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4xo43")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_flfub")
+theme_override_styles/normal = SubResource("StyleBoxTexture_avt1c")
+script = ExtResource("2_64fv4")

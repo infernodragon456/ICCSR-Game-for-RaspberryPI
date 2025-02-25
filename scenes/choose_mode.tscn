@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://dk2aqhteg22um"]
+
+[ext_resource type="Texture2D" uid="uid://bcdca6ifgt0pt" path="res://assets/Screenshot 2025-02-25 195130.png" id="1_kcgog"]
+[ext_resource type="Script" path="res://scenes/single.gd" id="2_m6biw"]
+[ext_resource type="Script" path="res://scenes/multi.gd" id="3_qckxj"]
+[ext_resource type="PackedScene" uid="uid://b7av8ipm0y6w5" path="res://scenes/exit.tscn" id="4_fm273"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vlcm4"]
+texture = ExtResource("1_kcgog")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_whlib"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agabn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_571bs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ao4ob"]
+
+[node name="ChooseMode" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Exit" parent="." instance=ExtResource("4_fm273")]
+layout_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_vlcm4")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 246.0
+offset_right = 471.0
+offset_bottom = 432.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_whlib")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_agabn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_571bs")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ao4ob")
+script = ExtResource("2_m6biw")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 687.0
+offset_top = 249.0
+offset_right = 864.0
+offset_bottom = 427.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_whlib")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_agabn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_571bs")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ao4ob")
+script = ExtResource("3_qckxj")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_singleplayer_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_multiplayer_pressed"]

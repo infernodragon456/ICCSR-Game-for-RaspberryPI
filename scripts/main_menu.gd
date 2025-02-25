@@ -12,8 +12,8 @@ func _process(delta):
 
 func _on_start_pressed():
 	print("Start")
-	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
+	get_tree().change_scene_to_file("res://scenes/choose_mode.tscn")
 	pass # Replace with function body
 
 func _on_exit_pressed():
-	get_tree().quit()
+	print("how to play is pressed.")
