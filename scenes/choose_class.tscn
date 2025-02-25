@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b0g3g4edj5nu"]
+[gd_scene load_steps=32 format=3 uid="uid://b0g3g4edj5nu"]
 
 [ext_resource type="Texture2D" uid="uid://ciyppxt5i538g" path="res://assets/choose_class_bg.png" id="1_3je1o"]
 [ext_resource type="PackedScene" uid="uid://dtweebu273d0h" path="res://scenes/class_button.tscn" id="2_nmw5g"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b0r30a16uhmyb" path="res://assets/5.png" id="7_e0gif"]
 [ext_resource type="Texture2D" uid="uid://csripgjgxokp" path="res://assets/continue_class.png" id="8_hunki"]
 [ext_resource type="Script" path="res://scripts/continue.gd" id="9_dhdv7"]
+[ext_resource type="Script" path="res://scenes/close.gd" id="10_nh6q8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7uvk5"]
 texture = ExtResource("1_3je1o")
@@ -57,6 +58,14 @@ texture = ExtResource("8_hunki")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ncybi"]
 texture = ExtResource("8_hunki")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_suq07"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3oxh1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bq00c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_psvno"]
 
 [node name="ChooseClass" type="Control"]
 layout_mode = 3
@@ -162,8 +171,22 @@ disabled = true
 script = ExtResource("9_dhdv7")
 metadata/_edit_use_anchors_ = true
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.770833
+anchor_top = 0.20679
+anchor_right = 0.835938
+anchor_bottom = 0.325617
+theme_override_styles/focus = SubResource("StyleBoxEmpty_suq07")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3oxh1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bq00c")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_psvno")
+script = ExtResource("10_nh6q8")
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="Button1" to="Continue" method="_on_button_1_pressed"]
 [connection signal="pressed" from="Button2" to="Continue" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="Continue" method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button4" to="Continue" method="_on_button_4_pressed"]
 [connection signal="pressed" from="Button5" to="Continue" method="_on_button_5_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="on_close_pressed"]
