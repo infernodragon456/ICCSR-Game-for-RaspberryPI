@@ -1,22 +1,36 @@
-[gd_scene load_steps=8 format=3 uid="uid://cakuhgxcoqjf0"]
+[gd_scene load_steps=14 format=3 uid="uid://cakuhgxcoqjf0"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_n0pgd"]
-[ext_resource type="Texture2D" uid="uid://dnu40x7022d84" path="res://assets/menuBackground.jpg" id="1_qvl8f"]
+[ext_resource type="Texture2D" uid="uid://df4q72nw01hft" path="res://assets/main_menu_Background.png" id="2_l2ot1"]
+[ext_resource type="Texture2D" uid="uid://jxfe77aa5xtg" path="res://assets/Continue.png" id="3_vhhsv"]
+[ext_resource type="Texture2D" uid="uid://dexsy4nn11ehn" path="res://assets/Continue (1).png" id="4_qbs6n"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qfdgy"]
-texture = ExtResource("1_qvl8f")
-modulate_color = Color(0.415686, 0.403922, 0.403922, 0.984314)
+texture = ExtResource("2_l2ot1")
+modulate_color = Color(1, 1, 0.972549, 0.984314)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iqrdm"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jf0kh"]
+texture = ExtResource("3_vhhsv")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mbry5"]
-bg_color = Color(0.6, 0.6, 0.945098, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qpo1q"]
+texture = ExtResource("3_vhhsv")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yn7f3"]
-bg_color = Color(0.6, 0.6, 0.945098, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_51h8d"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_csd55"]
-bg_color = Color(0.6, 0.6, 0.945098, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekdlh"]
+texture = ExtResource("3_vhhsv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x22b7"]
+texture = ExtResource("4_qbs6n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p8xp5"]
+texture = ExtResource("4_qbs6n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p3uvf"]
+texture = ExtResource("4_qbs6n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ukdvw"]
+texture = ExtResource("4_qbs6n")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -38,59 +52,33 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_qfdgy")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = -81.0
-offset_right = 152.0
-offset_bottom = 81.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Start" type="Button" parent="VBoxContainer"]
+[node name="Start" type="Button" parent="."]
 layout_mode = 2
+offset_left = 381.0
+offset_top = 263.0
+offset_right = 772.0
+offset_bottom = 380.0
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-theme_override_styles/focus = SubResource("StyleBoxEmpty_iqrdm")
-theme_override_styles/hover = SubResource("StyleBoxFlat_mbry5")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_yn7f3")
-theme_override_styles/normal = SubResource("StyleBoxFlat_csd55")
-text = "Start"
+theme_override_styles/focus = SubResource("StyleBoxTexture_jf0kh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qpo1q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_51h8d")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ekdlh")
 
-[node name="Exit" type="Button" parent="VBoxContainer"]
+[node name="Exit" type="Button" parent="."]
 layout_mode = 2
+offset_left = 445.0
+offset_top = 400.0
+offset_right = 707.0
+offset_bottom = 486.0
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-theme_override_styles/focus = SubResource("StyleBoxEmpty_iqrdm")
-theme_override_styles/hover = SubResource("StyleBoxFlat_mbry5")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_yn7f3")
-theme_override_styles/normal = SubResource("StyleBoxFlat_csd55")
-text = "Exit"
+theme_override_styles/focus = SubResource("StyleBoxTexture_x22b7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_p8xp5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p3uvf")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ukdvw")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -139.0
-offset_top = -209.0
-offset_right = 139.0
-offset_bottom = -136.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 51
-text = "Rasp Game"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
