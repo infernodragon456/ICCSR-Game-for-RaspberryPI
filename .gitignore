@@ -3,3 +3,6 @@
 /android/
 *.translation
 .vscode/
+
+# Ignore builds directory
+/builds/
