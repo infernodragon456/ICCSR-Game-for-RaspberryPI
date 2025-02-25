@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b0g3g4edj5nu"]
+[gd_scene load_steps=27 format=3 uid="uid://b0g3g4edj5nu"]
 
 [ext_resource type="Texture2D" uid="uid://ciyppxt5i538g" path="res://assets/choose_class_bg.png" id="1_3je1o"]
 [ext_resource type="PackedScene" uid="uid://dtweebu273d0h" path="res://scenes/class_button.tscn" id="2_nmw5g"]
@@ -7,9 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://b446ylt7ig4wa" path="res://assets/3.png" id="5_0g7jj"]
 [ext_resource type="Texture2D" uid="uid://brbjmlo0gta5h" path="res://assets/4.png" id="6_m3xh3"]
 [ext_resource type="Texture2D" uid="uid://b0r30a16uhmyb" path="res://assets/5.png" id="7_e0gif"]
+[ext_resource type="Texture2D" uid="uid://csripgjgxokp" path="res://assets/continue_class.png" id="8_hunki"]
+[ext_resource type="Script" path="res://scripts/continue.gd" id="9_dhdv7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7uvk5"]
 texture = ExtResource("1_3je1o")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i2ns7"]
+texture = ExtResource("3_y544i")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cr6xk"]
 
@@ -18,17 +23,40 @@ texture = ExtResource("3_y544i")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_541mk"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fhfxb"]
+texture = ExtResource("4_166yh")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iqocf"]
 texture = ExtResource("4_166yh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_prepj"]
+texture = ExtResource("5_0g7jj")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q0r1b"]
 texture = ExtResource("5_0g7jj")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ac7fp"]
+texture = ExtResource("6_m3xh3")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q6vw1"]
 texture = ExtResource("6_m3xh3")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nqbua"]
+texture = ExtResource("7_e0gif")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3364m"]
 texture = ExtResource("7_e0gif")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y08ku"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mmqem"]
+texture = ExtResource("8_hunki")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ytj7f"]
+texture = ExtResource("8_hunki")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ncybi"]
+texture = ExtResource("8_hunki")
 
 [node name="ChooseClass" type="Control"]
 layout_mode = 3
@@ -55,6 +83,7 @@ anchor_right = 0.297743
 anchor_bottom = 0.598765
 offset_right = 0.0
 offset_bottom = 0.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_i2ns7")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_cr6xk")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_uqe4r")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_541mk")
@@ -68,6 +97,7 @@ anchor_right = 0.422743
 anchor_bottom = 0.598765
 offset_right = 0.0
 offset_bottom = 0.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_fhfxb")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_cr6xk")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_iqocf")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_541mk")
@@ -81,6 +111,7 @@ anchor_right = 0.548611
 anchor_bottom = 0.598765
 offset_right = 0.0
 offset_bottom = 0.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_prepj")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_cr6xk")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q0r1b")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_541mk")
@@ -94,6 +125,7 @@ anchor_right = 0.676215
 anchor_bottom = 0.598765
 offset_right = 0.0
 offset_bottom = 0.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_ac7fp")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_cr6xk")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_q6vw1")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_541mk")
@@ -107,7 +139,31 @@ anchor_right = 0.802083
 anchor_bottom = 0.598765
 offset_right = 0.0
 offset_bottom = 0.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_nqbua")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_cr6xk")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_3364m")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_541mk")
 metadata/_edit_use_anchors_ = true
+
+[node name="Continue" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.369792
+anchor_top = 0.665123
+anchor_right = 0.632813
+anchor_bottom = 0.837963
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y08ku")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mmqem")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ytj7f")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ncybi")
+disabled = true
+script = ExtResource("9_dhdv7")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button1" to="Continue" method="_on_button_1_pressed"]
+[connection signal="pressed" from="Button2" to="Continue" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="Continue" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="Continue" method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button5" to="Continue" method="_on_button_5_pressed"]
