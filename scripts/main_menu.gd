@@ -16,4 +16,4 @@ func _on_start_pressed():
 	pass # Replace with function body
 
 func _on_exit_pressed():
-	print("how to play is pressed.")
+	print("how to play button is pressed")

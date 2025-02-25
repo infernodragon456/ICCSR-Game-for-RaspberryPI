@@ -54,10 +54,10 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_qfdgy")
 
 [node name="Start" type="Button" parent="."]
 layout_mode = 2
-offset_left = 381.0
-offset_top = 263.0
-offset_right = 772.0
-offset_bottom = 380.0
+anchor_left = 0.330729
+anchor_top = 0.405864
+anchor_right = 0.670139
+anchor_bottom = 0.58642
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
@@ -65,13 +65,14 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_jf0kh")
 theme_override_styles/hover = SubResource("StyleBoxTexture_qpo1q")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_51h8d")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ekdlh")
+metadata/_edit_use_anchors_ = true
 
 [node name="Exit" type="Button" parent="."]
 layout_mode = 2
-offset_left = 445.0
-offset_top = 400.0
-offset_right = 707.0
-offset_bottom = 486.0
+anchor_left = 0.386285
+anchor_top = 0.617284
+anchor_right = 0.613715
+anchor_bottom = 0.75
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
@@ -79,6 +80,7 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_x22b7")
 theme_override_styles/hover = SubResource("StyleBoxTexture_p8xp5")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_p3uvf")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ukdvw")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
