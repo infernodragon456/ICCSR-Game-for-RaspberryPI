@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtweebu273d0h"]
+[gd_scene load_steps=4 format=3 uid="uid://dtweebu273d0h"]
+
+[ext_resource type="Script" path="res://scripts/class_button.gd" id="1_q1t00"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4lxs6"]
 
@@ -9,3 +11,6 @@ offset_right = 8.0
 offset_bottom = 8.0
 theme_override_styles/hover = SubResource("StyleBoxEmpty_4lxs6")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_axhjm")
+script = ExtResource("1_q1t00")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
