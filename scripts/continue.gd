@@ -41,3 +41,7 @@ func _on_button_1_pressed() -> void:
 	var continue_button = get_node("../Continue")  # Adjust the path if needed
 	continue_button.disabled = true
 	pass # Replace with function body.
+	
+func _on_continue1_pressed() :
+	get_tree().change_scene_to_file("res://scenes/choose_letter.tscn")
+	

@@ -189,4 +189,5 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Button3" to="Continue" method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button4" to="Continue" method="_on_button_4_pressed"]
 [connection signal="pressed" from="Button5" to="Continue" method="_on_button_5_pressed"]
+[connection signal="pressed" from="Continue" to="Continue" method="_on_continue1_pressed"]
 [connection signal="pressed" from="Button" to="Button" method="on_close_pressed"]
