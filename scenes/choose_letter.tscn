@@ -143,15 +143,16 @@ script = ExtResource("2_mv2k1")
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 0
-offset_left = 26.0
-offset_top = 29.0
-offset_right = 164.0
-offset_bottom = 78.0
+anchor_left = 0.0225694
+anchor_top = 0.0447531
+anchor_right = 0.142361
+anchor_bottom = 0.12037
 theme_override_styles/focus = SubResource("StyleBoxTexture_jtxss")
 theme_override_styles/hover = SubResource("StyleBoxTexture_hqy80")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_lw5wu")
 theme_override_styles/normal = SubResource("StyleBoxTexture_4auda")
 script = ExtResource("3_14ljt")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button" to="Button" method="on_letter_pressed"]
 [connection signal="pressed" from="Button2" to="Button2" method="on_letter_pressed"]
