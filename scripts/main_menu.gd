@@ -12,8 +12,11 @@ func _process(delta):
 
 func _on_start_pressed():
 	print("Start")
+	Global.practice_mode = false
 	get_tree().change_scene_to_file("res://scenes/choose_mode.tscn")
-	pass # Replace with function body
 
-func _on_exit_pressed():
-	print("how to play button is pressed")
+
+func _on_how_to_play_pressed() -> void:
+	Global.practice_mode = true
+	get_tree().change_scene_to_file("res://scenes/choose_mode.tscn")
+	pass # Replace with function body.

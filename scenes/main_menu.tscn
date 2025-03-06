@@ -67,7 +67,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_51h8d")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ekdlh")
 metadata/_edit_use_anchors_ = true
 
-[node name="Exit" type="Button" parent="."]
+[node name="How_To_Play" type="Button" parent="."]
 layout_mode = 2
 anchor_left = 0.386285
 anchor_top = 0.617284
@@ -83,4 +83,4 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ukdvw")
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="How_To_Play" to="." method="_on_how_to_play_pressed"]
