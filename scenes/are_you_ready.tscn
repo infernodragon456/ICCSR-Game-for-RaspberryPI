@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://ceh18vy67tchm"]
+
+[ext_resource type="Texture2D" uid="uid://36kjnek7tkev" path="res://assets/areuready_bg.png" id="1_kfjyj"]
+[ext_resource type="PackedScene" uid="uid://dfhrvfqrrweth" path="res://scenes/exit.tscn" id="2_0trkx"]
+[ext_resource type="Texture2D" uid="uid://b270k48sv2mtc" path="res://assets/Back.png" id="3_khwqf"]
+[ext_resource type="Script" path="res://scripts/back_areuready.gd" id="4_r0b4e"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gulhv"]
+texture = ExtResource("1_kfjyj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wkws1"]
+texture = ExtResource("3_khwqf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r5iou"]
+texture = ExtResource("3_khwqf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u0l40"]
+texture = ExtResource("3_khwqf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6jtbj"]
+texture = ExtResource("3_khwqf")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_gulhv")
+
+[node name="Exit" parent="." instance=ExtResource("2_0trkx")]
+layout_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0225694
+anchor_top = 0.0447531
+anchor_right = 0.142361
+anchor_bottom = 0.12037
+theme_override_styles/focus = SubResource("StyleBoxTexture_wkws1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r5iou")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_u0l40")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6jtbj")
+script = ExtResource("4_r0b4e")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
