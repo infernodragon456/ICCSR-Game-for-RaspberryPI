@@ -10,20 +10,24 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _on_button_1_pressed() -> void:
-	var continue_button = get_node("../continue")  # Adjust the path if needed
-	continue_button.disabled = false
-	print(continue_button)
-	
-	
-func _on_button_2_pressed() -> void:
+
+func _on_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_medium_pressed() -> void:
 	var continue_button = get_node("../continue")  # Adjust the path if needed
 	continue_button.disabled = true
-	print(continue_button)
-	
-	
-func on_continue2_pressed():
-	get_tree().change_scene_to_file("res://scenes/choose_difficulty.tscn")
+	pass # Replace with function body.
 
-func close():
-	get_tree().change_scene_to_file("res://scenes/choose_letter.tscn")
+
+func _on_hard_pressed() -> void:
+	var continue_button = get_node("../continue")  # Adjust the path if needed
+	continue_button.disabled = true
+	pass # Replace with function body.
+
+
+func _on_easy_pressed() -> void:
+	var continue_button = get_node("../continue")  # Adjust the path if needed
+	continue_button.disabled = false
+	pass # Replace with function body.

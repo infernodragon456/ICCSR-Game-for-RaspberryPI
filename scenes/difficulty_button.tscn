@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbh6rthwh3brm"]
+
+[ext_resource type="Texture2D" uid="uid://bmr4osglo46hl" path="res://assets/difficulty_select.png" id="1_r0tom"]
+[ext_resource type="Script" path="res://scripts/difficulty_button.gd" id="2_5wg3t"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8vcpo"]
+texture = ExtResource("1_r0tom")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fobsp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k7r2t"]
+texture = ExtResource("1_r0tom")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g3g64"]
+
+[node name="Button" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_8vcpo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fobsp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k7r2t")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g3g64")
+script = ExtResource("2_5wg3t")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
