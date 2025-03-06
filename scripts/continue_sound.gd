@@ -18,7 +18,7 @@ func _on_button_1_pressed() -> void:
 	
 func _on_button_2_pressed() -> void:
 	var continue_button = get_node("../continue")  # Adjust the path if needed
-	continue_button.disabled = false
+	continue_button.disabled = true
 	print(continue_button)
 	
 	

@@ -1,13 +1,13 @@
 [gd_scene load_steps=23 format=3 uid="uid://yy0jqyl17vp0"]
 
-[ext_resource type="Texture2D" uid="uid://lmkgopbdkakx" path="res://assets/sound_ss.png" id="1_kksy8"]
+[ext_resource type="Texture2D" uid="uid://cpwp372lbaumj" path="res://assets/sound_selection_bg.png" id="1_qhxja"]
 [ext_resource type="Texture2D" uid="uid://56fc6l0clbqh" path="res://assets/Frame 3.png" id="2_514bf"]
 [ext_resource type="Script" path="res://scripts/sound_buttons.gd" id="3_g5wfa"]
 [ext_resource type="Texture2D" uid="uid://csripgjgxokp" path="res://assets/continue_class.png" id="4_3k5hv"]
 [ext_resource type="Script" path="res://scripts/continue_sound.gd" id="5_n4k3u"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sj024"]
-texture = ExtResource("1_kksy8")
+texture = ExtResource("1_qhxja")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s63mj"]
 texture = ExtResource("2_514bf")
@@ -65,52 +65,57 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_sj024")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 422.0
-offset_top = 284.0
-offset_right = 530.0
-offset_bottom = 389.0
+anchor_left = 0.366319
+anchor_top = 0.438272
+anchor_right = 0.460069
+anchor_bottom = 0.600309
 theme_override_styles/focus = SubResource("StyleBoxTexture_s63mj")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_x1obq")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_qk4ox")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_bny5c")
 script = ExtResource("3_g5wfa")
+metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 620.0
-offset_top = 282.0
-offset_right = 728.0
-offset_bottom = 387.0
+anchor_left = 0.538194
+anchor_top = 0.435185
+anchor_right = 0.631944
+anchor_bottom = 0.597222
 theme_override_styles/focus = SubResource("StyleBoxTexture_vgjo0")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_picgd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_uj6kb")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_7vrd0")
 script = ExtResource("3_g5wfa")
+metadata/_edit_use_anchors_ = true
 
 [node name="continue" type="Button" parent="."]
 layout_mode = 0
-offset_left = 426.0
-offset_top = 438.0
-offset_right = 727.0
-offset_bottom = 551.0
+anchor_left = 0.369792
+anchor_top = 0.675926
+anchor_right = 0.631076
+anchor_bottom = 0.850309
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_52tom")
 theme_override_styles/hover = SubResource("StyleBoxTexture_dgp33")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_21giv")
 theme_override_styles/normal = SubResource("StyleBoxTexture_xur0m")
 disabled = true
 script = ExtResource("5_n4k3u")
+metadata/_edit_use_anchors_ = true
 
 [node name="close" type="Button" parent="."]
 layout_mode = 0
-offset_left = 887.0
-offset_top = 135.0
-offset_right = 965.0
-offset_bottom = 212.0
+anchor_left = 0.769965
+anchor_top = 0.208333
+anchor_right = 0.837674
+anchor_bottom = 0.327161
+offset_bottom = -1.52588e-05
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8jdyv")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_557cn")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_60emt")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_aenwp")
 script = ExtResource("5_n4k3u")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button" to="continue" method="_on_button_1_pressed"]
 [connection signal="pressed" from="Button2" to="continue" method="_on_button_2_pressed"]

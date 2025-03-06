@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_button_5_pressed() -> void:
 	var continue_button = get_node("../Continue")  # Adjust the path if needed
-	continue_button.disabled = false
+	continue_button.disabled = Global.practice_mode
 	print(continue_button)
 	
 	
@@ -39,7 +39,7 @@ func _on_button_2_pressed() -> void:
 
 func _on_button_1_pressed() -> void:
 	var continue_button = get_node("../Continue")  # Adjust the path if needed
-	continue_button.disabled = true
+	continue_button.disabled = !Global.practice_mode
 	pass # Replace with function body.
 	
 func _on_continue1_pressed() :

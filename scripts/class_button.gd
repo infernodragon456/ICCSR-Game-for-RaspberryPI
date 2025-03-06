@@ -23,6 +23,5 @@ func _on_pressed() -> void:
 			print("Button4 was pressed")
 		"Button5":
 			print("Button5 was pressed")
-			#get_tree().change_scene_to_file("res://scenes/choose_letter.tscn")
 		_:
 			print("Unknown button pressed: ", name)
