@@ -1,0 +1,126 @@
+[gd_scene load_steps=17 format=3 uid="uid://u3d7mcg4gudj"]
+
+[ext_resource type="Texture2D" uid="uid://dk5v78sawuimp" path="res://assets/difficulty_bg.png" id="1_w242d"]
+[ext_resource type="PackedScene" uid="uid://dfhrvfqrrweth" path="res://scenes/exit.tscn" id="2_rnguk"]
+[ext_resource type="Texture2D" uid="uid://b270k48sv2mtc" path="res://assets/Back.png" id="3_7wnp4"]
+[ext_resource type="Script" path="res://scripts/back_difficulty.gd" id="4_26gs6"]
+[ext_resource type="PackedScene" uid="uid://cbh6rthwh3brm" path="res://scenes/difficulty_button.tscn" id="5_mlfyf"]
+[ext_resource type="Texture2D" uid="uid://csripgjgxokp" path="res://assets/continue_class.png" id="6_1e65w"]
+[ext_resource type="Script" path="res://scripts/continue_difficulty.gd" id="7_4btq4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rmkel"]
+texture = ExtResource("1_w242d")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kovop"]
+texture = ExtResource("3_7wnp4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rue0b"]
+texture = ExtResource("3_7wnp4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n1yed"]
+texture = ExtResource("3_7wnp4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_38sda"]
+texture = ExtResource("3_7wnp4")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f3vhh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3n6tv"]
+texture = ExtResource("6_1e65w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kgrmh"]
+texture = ExtResource("6_1e65w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ug2u"]
+texture = ExtResource("6_1e65w")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rmkel")
+
+[node name="Exit" parent="." instance=ExtResource("2_rnguk")]
+layout_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0225694
+anchor_top = 0.0447531
+anchor_right = 0.142361
+anchor_bottom = 0.12037
+theme_override_styles/focus = SubResource("StyleBoxTexture_kovop")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rue0b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_n1yed")
+theme_override_styles/normal = SubResource("StyleBoxTexture_38sda")
+script = ExtResource("4_26gs6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Easy" parent="." instance=ExtResource("5_mlfyf")]
+layout_mode = 0
+anchor_left = 0.113715
+anchor_top = 0.367284
+anchor_right = 0.338542
+anchor_bottom = 0.753086
+offset_right = 0.0
+offset_bottom = -3.05176e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="Medium" parent="." instance=ExtResource("5_mlfyf")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.358507
+anchor_top = 0.351852
+anchor_right = 0.653299
+anchor_bottom = 0.755556
+offset_right = -56.6
+offset_bottom = -43.6
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+metadata/_edit_use_anchors_ = true
+
+[node name="Hard" parent="." instance=ExtResource("5_mlfyf")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.671007
+anchor_top = 0.367284
+anchor_right = 0.895833
+anchor_bottom = 0.753086
+offset_right = 0.0
+offset_bottom = -3.05176e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="continue" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.369792
+anchor_top = 0.75
+anchor_right = 0.631076
+anchor_bottom = 0.924383
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_f3vhh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3n6tv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kgrmh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4ug2u")
+disabled = true
+script = ExtResource("7_4btq4")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
+[connection signal="pressed" from="Easy" to="continue" method="_on_easy_pressed"]
+[connection signal="pressed" from="Medium" to="continue" method="_on_medium_pressed"]
+[connection signal="pressed" from="Hard" to="continue" method="_on_hard_pressed"]
+[connection signal="pressed" from="continue" to="continue" method="_on_pressed"]

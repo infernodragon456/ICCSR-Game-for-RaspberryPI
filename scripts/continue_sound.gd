@@ -18,12 +18,12 @@ func _on_button_1_pressed() -> void:
 	
 func _on_button_2_pressed() -> void:
 	var continue_button = get_node("../continue")  # Adjust the path if needed
-	continue_button.disabled = false
+	continue_button.disabled = true
 	print(continue_button)
 	
 	
 func on_continue2_pressed():
-	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
+	get_tree().change_scene_to_file("res://scenes/choose_difficulty.tscn")
 
 func close():
 	get_tree().change_scene_to_file("res://scenes/choose_letter.tscn")

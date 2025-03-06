@@ -13,15 +13,10 @@ func _process(delta: float) -> void:
 
 func _on_pressed() -> void:
 	match name:
-		"Button1":
-			print("Button1 was pressed")
-		"Button2":
-			print("Button2 was pressed")
-		"Button3":
-			print("Button3 was pressed")
-		"Button4":
-			print("Button4 was pressed")
-		"Button5":
-			print("Button5 was pressed")
-		_:
-			print("Unknown button pressed: ", name)
+		"Easy":
+			pass
+		"Medium":
+			pass
+		"Hard":
+			pass
+	pass # Replace with function body.
