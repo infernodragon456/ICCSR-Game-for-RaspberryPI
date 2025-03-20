@@ -1,0 +1,91 @@
+[gd_scene load_steps=15 format=3 uid="uid://baoeeimsw7kxj"]
+
+[ext_resource type="Texture2D" uid="uid://d32etpk843t8j" path="res://assets/practice_bg.png" id="1_sihr0"]
+[ext_resource type="Texture2D" uid="uid://dksqdgklwj2nl" path="res://assets/salt.png" id="2_fmsax"]
+[ext_resource type="Script" path="res://scripts/salt.gd" id="3_8x7cv"]
+[ext_resource type="Texture2D" uid="uid://drxey77hpqyy5" path="res://assets/Tick.png" id="3_bo5ii"]
+[ext_resource type="Texture2D" uid="uid://cowfw2gngaucl" path="res://assets/Correct!.png" id="5_a7w6d"]
+[ext_resource type="Script" path="res://scripts/correct.gd" id="6_8t8sx"]
+[ext_resource type="PackedScene" uid="uid://xi3umfjieywd" path="res://scenes/countbar.tscn" id="7_e1xol"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_54f1g"]
+texture = ExtResource("1_sihr0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ic6w1"]
+texture = ExtResource("3_bo5ii")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_83nfq"]
+texture = ExtResource("3_bo5ii")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h7tls"]
+texture = ExtResource("2_fmsax")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nyd2f"]
+texture = ExtResource("3_bo5ii")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n8jnj"]
+texture = ExtResource("2_fmsax")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tqdl1"]
+texture = ExtResource("5_a7w6d")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_54f1g")
+
+[node name="countbar" parent="." instance=ExtResource("7_e1xol")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.231771
+anchor_top = 0.0493827
+anchor_right = 1.23177
+anchor_bottom = 1.04938
+metadata/_edit_use_anchors_ = true
+
+[node name="Salt" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.517361
+anchor_top = 0.58179
+anchor_right = 0.605903
+anchor_bottom = 0.722222
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_ic6w1")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_83nfq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_h7tls")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nyd2f")
+theme_override_styles/normal = SubResource("StyleBoxTexture_n8jnj")
+script = ExtResource("3_8x7cv")
+metadata/_edit_use_anchors_ = true
+
+[node name="correct" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.363715
+anchor_top = 0.473765
+anchor_right = 0.655382
+anchor_bottom = 0.615741
+offset_bottom = 3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_tqdl1")
+script = ExtResource("6_8t8sx")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Salt" to="Salt" method="_on_pressed"]
+[connection signal="pressed" from="Salt" to="correct" method="_on_salt_pressed"]
