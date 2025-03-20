@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://dir6cvoputohv"]
+
+[ext_resource type="Texture2D" uid="uid://tm7afriqwjc4" path="res://assets/start_filler.png" id="1_xdf0j"]
+[ext_resource type="AudioStream" uid="uid://omwqfekan014" path="res://assets/starting_from_sa.mp3" id="2_4jrb5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ln33n"]
+texture = ExtResource("1_xdf0j")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ngon"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ghou"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xjaff"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i2i4f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w5oni"]
+
+[node name="StartFiller" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ln33n")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 491.0
+offset_top = 426.0
+offset_right = 678.0
+offset_bottom = 509.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2ngon")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0ghou")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xjaff")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i2i4f")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w5oni")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_4jrb5")
+volume_db = 10.146
+autoplay = true
