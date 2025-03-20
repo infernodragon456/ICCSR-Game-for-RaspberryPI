@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://boja44iurd56"]
+
+[ext_resource type="AudioStream" uid="uid://omwqfekan014" path="res://assets/starting_from_sa.mp3" id="1_hbow0"]
+[ext_resource type="Script" path="res://scripts/sound_manager.gd" id="2_o3g0b"]
+
+[node name="SoundManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("2_o3g0b")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node"]
+stream = ExtResource("1_hbow0")
+volume_db = 12.296

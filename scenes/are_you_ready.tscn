@@ -1,9 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://ceh18vy67tchm"]
+[gd_scene load_steps=28 format=3 uid="uid://ceh18vy67tchm"]
 
 [ext_resource type="Texture2D" uid="uid://36kjnek7tkev" path="res://assets/areuready_bg.png" id="1_kfjyj"]
 [ext_resource type="PackedScene" uid="uid://dfhrvfqrrweth" path="res://scenes/exit.tscn" id="2_0trkx"]
 [ext_resource type="Texture2D" uid="uid://b270k48sv2mtc" path="res://assets/Back.png" id="3_khwqf"]
 [ext_resource type="Script" path="res://scripts/back_areuready.gd" id="4_r0b4e"]
+[ext_resource type="Script" path="res://scripts/play_sound.gd" id="5_kgviy"]
+[ext_resource type="AudioStream" uid="uid://cx6am3uwocc2a" path="res://assets/sh.mp3" id="6_80o82"]
+[ext_resource type="Script" path="res://scripts/for_audio.gd" id="7_57m1y"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gulhv"]
 texture = ExtResource("1_kfjyj")
@@ -19,6 +22,36 @@ texture = ExtResource("3_khwqf")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6jtbj"]
 texture = ExtResource("3_khwqf")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_chxx2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ibd7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8po64"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1awan"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6apds"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j3ksp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c8yun"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4olvu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ajqrx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_57of7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0dj84"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1i3ja"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dgfuk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56nce"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pqyr5"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -55,4 +88,54 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_6jtbj")
 script = ExtResource("4_r0b4e")
 metadata/_edit_use_anchors_ = true
 
+[node name="audio_play" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.706597
+anchor_top = 0.0432099
+anchor_right = 0.842014
+anchor_bottom = 0.117284
+theme_override_styles/focus = SubResource("StyleBoxEmpty_chxx2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8ibd7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8po64")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1awan")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6apds")
+script = ExtResource("5_kgviy")
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="audio_play"]
+position = Vector2(-814, -28)
+stream = ExtResource("6_80o82")
+volume_db = 10.866
+
+[node name="lets_practice" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.346354
+anchor_top = 0.493827
+anchor_right = 0.595486
+anchor_bottom = 0.62037
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j3ksp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_c8yun")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4olvu")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ajqrx")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_57of7")
+script = ExtResource("7_57m1y")
+metadata/_edit_use_anchors_ = true
+
+[node name="start_game" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.625868
+anchor_top = 0.490741
+anchor_right = 0.87934
+anchor_bottom = 0.62037
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0dj84")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1i3ja")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dgfuk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_56nce")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pqyr5")
+script = ExtResource("5_kgviy")
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
+[connection signal="pressed" from="audio_play" to="audio_play" method="_on_pressed"]
+[connection signal="pressed" from="lets_practice" to="lets_practice" method="_on_practice"]
+[connection signal="pressed" from="start_game" to="start_game" method="_on_start"]

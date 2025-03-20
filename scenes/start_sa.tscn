@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://j4oewdjr8wo1"]
+
+[ext_resource type="Texture2D" uid="uid://bj6m7uax6xvlb" path="res://assets/start_screen_sa.png" id="1_rgd81"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aeapu"]
+texture = ExtResource("1_rgd81")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_in65s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2sq35"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mrqw1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_41q7q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2vi8u"]
+
+[node name="StartSa" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_aeapu")
+metadata/_edit_use_anchors_ = true
+
+[node name="sound" type="Button" parent="."]
+layout_mode = 0
+offset_left = 969.0
+offset_top = 27.0
+offset_right = 1129.0
+offset_bottom = 78.0
+
+[node name="back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 27.0
+offset_right = 163.0
+offset_bottom = 75.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_in65s")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_2sq35")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mrqw1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_41q7q")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2vi8u")
+
+[node name="sun" type="Button" parent="."]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 171.0
+offset_right = 227.0
+offset_bottom = 318.0
+
+[node name="slide" type="Button" parent="."]
+layout_mode = 0
+offset_left = 323.0
+offset_top = 333.0
+offset_right = 576.0
+offset_bottom = 538.0
+
+[node name="see-saw" type="Button" parent="."]
+layout_mode = 0
+offset_left = 767.0
+offset_top = 529.0
+offset_right = 1103.0
+offset_bottom = 622.0
+
+[node name="swing" type="Button" parent="."]
+layout_mode = 0
+offset_left = 601.0
+offset_top = 374.0
+offset_right = 785.0
+offset_bottom = 494.0
+
+[node name="school" type="Button" parent="."]
+layout_mode = 0
+offset_left = 881.0
+offset_top = 336.0
+offset_right = 1132.0
+offset_bottom = 470.0
