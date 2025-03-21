@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://bgtdrpncu4svv"]
 
-[ext_resource type="Texture2D" uid="uid://dbcv4r4mtvakg" path="res://assets/practice_filler.png" id="1_fkhq0"]
+[ext_resource type="Texture2D" uid="uid://86mdj463lhi8" path="res://assets/practice_filler.png" id="1_fkhq0"]
 [ext_resource type="Script" path="res://scripts/practice_filler.gd" id="2_xhxd2"]
 [ext_resource type="AudioStream" uid="uid://omwqfekan014" path="res://assets/starting_from_sa.mp3" id="3_s1x4e"]
 

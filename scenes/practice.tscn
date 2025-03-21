@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://cs7hlji85af23"]
+[gd_scene load_steps=30 format=3 uid="uid://cs7hlji85af23"]
 
 [ext_resource type="Texture2D" uid="uid://d32etpk843t8j" path="res://assets/practice_bg.png" id="1_sihr0"]
+[ext_resource type="Script" path="res://scripts/game_bg.gd" id="2_ev1t0"]
 [ext_resource type="Texture2D" uid="uid://dksqdgklwj2nl" path="res://assets/salt.png" id="2_fmsax"]
 [ext_resource type="Script" path="res://scripts/salt.gd" id="3_8x7cv"]
 [ext_resource type="Texture2D" uid="uid://cgqox5jp3grhg" path="res://assets/Tick2.png" id="3_dy73n"]
@@ -10,14 +11,15 @@
 [ext_resource type="PackedScene" uid="uid://bc45aj3i3ifip" path="res://scenes/countbar.tscn" id="7_e1xol"]
 [ext_resource type="Script" path="res://scripts/play_sound.gd" id="8_7ryev"]
 [ext_resource type="AudioStream" uid="uid://cx6am3uwocc2a" path="res://assets/sa.mp3" id="9_q1c6u"]
+[ext_resource type="PackedScene" uid="uid://bd0y7wj25cx2x" path="res://scenes/well_done.tscn" id="11_3pysm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_54f1g"]
 texture = ExtResource("1_sihr0")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ic6w1"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hunim"]
 texture = ExtResource("3_dy73n")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_83nfq"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qfiiv"]
 texture = ExtResource("3_dy73n")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h7tls"]
@@ -68,6 +70,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_54f1g")
+script = ExtResource("2_ev1t0")
 
 [node name="countbar" parent="." instance=ExtResource("7_e1xol")]
 layout_mode = 1
@@ -87,8 +90,8 @@ anchor_right = 0.605903
 anchor_bottom = 0.722222
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/focus = SubResource("StyleBoxTexture_ic6w1")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_83nfq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_hunim")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qfiiv")
 theme_override_styles/hover = SubResource("StyleBoxTexture_h7tls")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_nyd2f")
 theme_override_styles/normal = SubResource("StyleBoxTexture_n8jnj")
@@ -98,6 +101,10 @@ metadata/_edit_use_anchors_ = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Salt"]
 stream = ExtResource("6_me184")
 volume_db = 14.083
+
+[node name="Control" parent="." instance=ExtResource("11_3pysm")]
+visibility_layer = 2
+layout_mode = 1
 
 [node name="correct" type="Panel" parent="."]
 visible = false

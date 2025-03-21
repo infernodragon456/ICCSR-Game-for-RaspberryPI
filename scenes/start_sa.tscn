@@ -1,7 +1,8 @@
-[gd_scene load_steps=54 format=3 uid="uid://j4oewdjr8wo1"]
+[gd_scene load_steps=55 format=3 uid="uid://j4oewdjr8wo1"]
 
 [ext_resource type="PackedScene" uid="uid://bc45aj3i3ifip" path="res://scenes/countbar.tscn" id="1_eve7v"]
 [ext_resource type="Texture2D" uid="uid://bj6m7uax6xvlb" path="res://assets/start_screen_sa.png" id="1_rgd81"]
+[ext_resource type="PackedScene" uid="uid://bd0y7wj25cx2x" path="res://scenes/well_done.tscn" id="2_ubbtq"]
 [ext_resource type="AudioStream" uid="uid://cx6am3uwocc2a" path="res://assets/sa.mp3" id="2_viyyd"]
 [ext_resource type="Script" path="res://scripts/game_sa.gd" id="3_waghg"]
 [ext_resource type="Texture2D" uid="uid://cgqox5jp3grhg" path="res://assets/Tick2.png" id="5_knsxm"]
@@ -256,6 +257,9 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_mqwfr")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_68j7m")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_dyklv")
 metadata/_edit_use_anchors_ = true
+
+[node name="Control2" parent="." instance=ExtResource("2_ubbtq")]
+layout_mode = 1
 
 [node name="Panel2" type="Panel" parent="."]
 visible = false

@@ -22,9 +22,11 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
+	Global.next_scene = "res://scenes/are_you_ready.tscn"
 	shouldModulate = false
 	if audio_player and not audio_player.playing:
 		audio_player.play()
-		
+	
+	focus_mode = FOCUS_NONE
 	disabled = true
 	pass # Replace with function body.

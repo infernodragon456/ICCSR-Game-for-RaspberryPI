@@ -1,8 +1,10 @@
 extends Node
 
 # Global variables
+var next_scene: String = ""
 var practice_mode: bool = false
 var star_count: int = 0
+var finished_round: bool = false
 var sun_found: bool = false
 var swing_found: bool = false
 var school_found: bool = false

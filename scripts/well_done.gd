@@ -8,14 +8,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if (Global.finished_round):
+		visible = true
+		await get_tree().create_timer(2.0).timeout
+		
+		Global.reset_star_count()
+		Global.finished_round = false
+		get_tree().change_scene_to_file(Global.next_scene)
+		
+	else:
+		visible = false
 	pass
-
-
-func _on_salt_pressed() -> void:
-	visible = true
-	Global.increment_star_count()
-	await get_tree().create_timer(1.0).timeout
-	visible = false
-	Global.finished_round = true
-	Global.star_count = 3
-	pass # Replace with function body.
