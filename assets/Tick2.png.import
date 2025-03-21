@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://86mdj463lhi8"
-path="res://.godot/imported/practice_filler.png-22b1c60787600d71929a2b16af7b077c.ctex"
+uid="uid://cgqox5jp3grhg"
+path="res://.godot/imported/Tick2.png-53199848248d5899d066e5603f4ac101.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/practice_filler.png"
-dest_files=["res://.godot/imported/practice_filler.png-22b1c60787600d71929a2b16af7b077c.ctex"]
+source_file="res://assets/Tick2.png"
+dest_files=["res://.godot/imported/Tick2.png-53199848248d5899d066e5603f4ac101.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://xi3umfjieywd"]
+[gd_scene load_steps=4 format=3 uid="uid://bc45aj3i3ifip"]
 
 [ext_resource type="Texture2D" uid="uid://xa56g0ks8l7c" path="res://assets/countstar.png" id="1_88ske"]
 [ext_resource type="Script" path="res://scripts/countbar.gd" id="1_u8q0h"]
@@ -37,6 +37,27 @@ visible = false
 layout_mode = 0
 anchor_left = 0.0868056
 anchor_right = 0.121528
+anchor_bottom = 0.0617284
+theme_override_styles/panel = SubResource("StyleBoxTexture_yj1qu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Count4" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.128472
+anchor_top = 0.00154321
+anchor_right = 0.163195
+anchor_bottom = 0.0632716
+theme_override_styles/panel = SubResource("StyleBoxTexture_yj1qu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Count5" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.171007
+anchor_right = 0.205729
 anchor_bottom = 0.0617284
 theme_override_styles/panel = SubResource("StyleBoxTexture_yj1qu")
 metadata/_edit_use_anchors_ = true

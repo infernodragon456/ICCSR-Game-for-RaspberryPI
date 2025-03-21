@@ -1,9 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://j4oewdjr8wo1"]
+[gd_scene load_steps=54 format=3 uid="uid://j4oewdjr8wo1"]
 
+[ext_resource type="PackedScene" uid="uid://bc45aj3i3ifip" path="res://scenes/countbar.tscn" id="1_eve7v"]
 [ext_resource type="Texture2D" uid="uid://bj6m7uax6xvlb" path="res://assets/start_screen_sa.png" id="1_rgd81"]
+[ext_resource type="AudioStream" uid="uid://cx6am3uwocc2a" path="res://assets/sa.mp3" id="2_viyyd"]
+[ext_resource type="Script" path="res://scripts/game_sa.gd" id="3_waghg"]
+[ext_resource type="Texture2D" uid="uid://cgqox5jp3grhg" path="res://assets/Tick2.png" id="5_knsxm"]
+[ext_resource type="Texture2D" uid="uid://cowfw2gngaucl" path="res://assets/Correct!.png" id="6_m5mst"]
+[ext_resource type="Script" path="res://sun.gd" id="6_phgh4"]
+[ext_resource type="Script" path="res://scripts/congo.gd" id="7_ayqp4"]
+[ext_resource type="Script" path="res://scripts/slide.gd" id="8_n2h2m"]
+[ext_resource type="Script" path="res://scripts/swing.gd" id="9_dettg"]
+[ext_resource type="Script" path="res://scripts/school.gd" id="10_gpx6g"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aeapu"]
 texture = ExtResource("1_rgd81")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2832"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5bjd1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ef3ab"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_43cnu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vxhal"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_in65s"]
 
@@ -14,6 +34,84 @@ texture = ExtResource("1_rgd81")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_41q7q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2vi8u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e46wa"]
+texture = ExtResource("5_knsxm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_44vai"]
+texture = ExtResource("5_knsxm")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_livf5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p27v0"]
+texture = ExtResource("5_knsxm")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wercd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d3cjk"]
+texture = ExtResource("5_knsxm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_svp7n"]
+texture = ExtResource("5_knsxm")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j747n"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6brbo"]
+texture = ExtResource("5_knsxm")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_widpx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y3c8n"]
+texture = ExtResource("5_knsxm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xmy5m"]
+texture = ExtResource("5_knsxm")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_exmxw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_al87o"]
+texture = ExtResource("5_knsxm")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4d3j0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h0b18"]
+texture = ExtResource("5_knsxm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ech1g"]
+texture = ExtResource("5_knsxm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hhm0j"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_st31f"]
+texture = ExtResource("5_knsxm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ilwdw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yargx"]
+texture = ExtResource("5_knsxm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dtjxx"]
+texture = ExtResource("5_knsxm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1e8vq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p03hm"]
+texture = ExtResource("5_knsxm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1rka2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nnl8j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_as278"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mqwfr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_68j7m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dyklv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ct4r1"]
+texture = ExtResource("6_m5mst")
 
 [node name="StartSa" type="Control"]
 layout_mode = 3
@@ -33,56 +131,151 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_aeapu")
 metadata/_edit_use_anchors_ = true
 
+[node name="Control" parent="." instance=ExtResource("1_eve7v")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.233507
+anchor_top = 0.0524691
+anchor_right = 1.23351
+anchor_bottom = 1.05247
+offset_bottom = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
 [node name="sound" type="Button" parent="."]
 layout_mode = 0
-offset_left = 969.0
-offset_top = 27.0
-offset_right = 1129.0
-offset_bottom = 78.0
+anchor_left = 0.841146
+anchor_top = 0.0416667
+anchor_right = 0.980035
+anchor_bottom = 0.12037
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x2832")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5bjd1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ef3ab")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_43cnu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vxhal")
+script = ExtResource("3_waghg")
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="sound"]
+stream = ExtResource("2_viyyd")
+volume_db = 15.0
 
 [node name="back" type="Button" parent="."]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 27.0
-offset_right = 163.0
-offset_bottom = 75.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0234375
+anchor_top = 0.0447531
+anchor_right = 0.141493
+anchor_bottom = 0.125
 theme_override_styles/focus = SubResource("StyleBoxEmpty_in65s")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_2sq35")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_mrqw1")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_41q7q")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2vi8u")
+script = ExtResource("3_waghg")
+metadata/_edit_use_anchors_ = true
 
 [node name="sun" type="Button" parent="."]
 layout_mode = 0
-offset_left = 75.0
-offset_top = 171.0
-offset_right = 227.0
-offset_bottom = 318.0
+anchor_left = 0.0651042
+anchor_top = 0.263889
+anchor_right = 0.197049
+anchor_bottom = 0.490741
+theme_override_styles/focus = SubResource("StyleBoxTexture_e46wa")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_44vai")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_livf5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p27v0")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wercd")
+script = ExtResource("6_phgh4")
+metadata/_edit_use_anchors_ = true
 
 [node name="slide" type="Button" parent="."]
 layout_mode = 0
-offset_left = 323.0
-offset_top = 333.0
-offset_right = 576.0
-offset_bottom = 538.0
+anchor_left = 0.280382
+anchor_top = 0.513889
+anchor_right = 0.5
+anchor_bottom = 0.830247
+theme_override_styles/focus = SubResource("StyleBoxTexture_d3cjk")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_svp7n")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j747n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6brbo")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_widpx")
+script = ExtResource("8_n2h2m")
+metadata/_edit_use_anchors_ = true
 
 [node name="see-saw" type="Button" parent="."]
 layout_mode = 0
-offset_left = 767.0
-offset_top = 529.0
-offset_right = 1103.0
-offset_bottom = 622.0
+anchor_left = 0.665799
+anchor_top = 0.816358
+anchor_right = 0.957465
+anchor_bottom = 0.959877
+theme_override_styles/focus = SubResource("StyleBoxTexture_y3c8n")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_xmy5m")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_exmxw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_al87o")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4d3j0")
+script = ExtResource("8_n2h2m")
+metadata/_edit_use_anchors_ = true
 
 [node name="swing" type="Button" parent="."]
 layout_mode = 0
-offset_left = 601.0
-offset_top = 374.0
-offset_right = 785.0
-offset_bottom = 494.0
+anchor_left = 0.521701
+anchor_top = 0.57716
+anchor_right = 0.681424
+anchor_bottom = 0.762346
+theme_override_styles/focus = SubResource("StyleBoxTexture_h0b18")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ech1g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hhm0j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_st31f")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ilwdw")
+script = ExtResource("9_dettg")
+metadata/_edit_use_anchors_ = true
 
 [node name="school" type="Button" parent="."]
 layout_mode = 0
-offset_left = 881.0
-offset_top = 336.0
-offset_right = 1132.0
-offset_bottom = 470.0
+anchor_left = 0.764757
+anchor_top = 0.518519
+anchor_right = 0.982639
+anchor_bottom = 0.725309
+theme_override_styles/focus = SubResource("StyleBoxTexture_yargx")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_dtjxx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1e8vq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p03hm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1rka2")
+script = ExtResource("10_gpx6g")
+metadata/_edit_use_anchors_ = true
+
+[node name="hint" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.710069
+anchor_top = 0.0447531
+anchor_right = 0.826389
+anchor_bottom = 0.123457
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nnl8j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_as278")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mqwfr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_68j7m")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dyklv")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 369.0
+offset_top = 289.0
+offset_right = 767.0
+offset_bottom = 390.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ct4r1")
+script = ExtResource("7_ayqp4")
+
+[connection signal="pressed" from="sound" to="sound" method="_on_pressed"]
+[connection signal="pressed" from="back" to="back" method="_on_back"]
+[connection signal="pressed" from="sun" to="sun" method="_on_pressed"]
+[connection signal="pressed" from="sun" to="Panel2" method="_on_any_pressed"]
+[connection signal="pressed" from="slide" to="slide" method="_on_pressed"]
+[connection signal="pressed" from="slide" to="Panel2" method="_on_any_pressed"]
+[connection signal="pressed" from="see-saw" to="see-saw" method="_on_pressed"]
+[connection signal="pressed" from="see-saw" to="Panel2" method="_on_any_pressed"]
+[connection signal="pressed" from="swing" to="swing" method="_on_pressed"]
+[connection signal="pressed" from="swing" to="Panel2" method="_on_any_pressed"]
+[connection signal="pressed" from="school" to="school" method="_on_pressed"]
+[connection signal="pressed" from="school" to="Panel2" method="_on_any_pressed"]

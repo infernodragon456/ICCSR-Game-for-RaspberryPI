@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b270k48sv2mtc" path="res://assets/Back.png" id="3_khwqf"]
 [ext_resource type="Script" path="res://scripts/back_areuready.gd" id="4_r0b4e"]
 [ext_resource type="Script" path="res://scripts/play_sound.gd" id="5_kgviy"]
-[ext_resource type="AudioStream" uid="uid://cx6am3uwocc2a" path="res://assets/sh.mp3" id="6_80o82"]
+[ext_resource type="AudioStream" uid="uid://cx6am3uwocc2a" path="res://assets/sa.mp3" id="6_80o82"]
 [ext_resource type="Script" path="res://scripts/for_audio.gd" id="7_57m1y"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gulhv"]

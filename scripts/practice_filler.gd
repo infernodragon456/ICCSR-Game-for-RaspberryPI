@@ -11,7 +11,8 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_practice_pressed():
-	get_tree().change_scene_to_file("res://scenes/are_you_ready.tscn")
+	Global.reset_star_count()
+	get_tree().change_scene_to_file("res://scenes/practice.tscn")
 	
 
 func _on_close():

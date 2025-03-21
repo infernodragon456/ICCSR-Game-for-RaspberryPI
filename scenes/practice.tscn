@@ -1,33 +1,56 @@
-[gd_scene load_steps=15 format=3 uid="uid://baoeeimsw7kxj"]
+[gd_scene load_steps=28 format=3 uid="uid://cs7hlji85af23"]
 
 [ext_resource type="Texture2D" uid="uid://d32etpk843t8j" path="res://assets/practice_bg.png" id="1_sihr0"]
 [ext_resource type="Texture2D" uid="uid://dksqdgklwj2nl" path="res://assets/salt.png" id="2_fmsax"]
 [ext_resource type="Script" path="res://scripts/salt.gd" id="3_8x7cv"]
-[ext_resource type="Texture2D" uid="uid://drxey77hpqyy5" path="res://assets/Tick.png" id="3_bo5ii"]
+[ext_resource type="Texture2D" uid="uid://cgqox5jp3grhg" path="res://assets/Tick2.png" id="3_dy73n"]
 [ext_resource type="Texture2D" uid="uid://cowfw2gngaucl" path="res://assets/Correct!.png" id="5_a7w6d"]
 [ext_resource type="Script" path="res://scripts/correct.gd" id="6_8t8sx"]
-[ext_resource type="PackedScene" uid="uid://xi3umfjieywd" path="res://scenes/countbar.tscn" id="7_e1xol"]
+[ext_resource type="AudioStream" uid="uid://tw8rdf5tyuhm" path="res://assets/salt.mp3" id="6_me184"]
+[ext_resource type="PackedScene" uid="uid://bc45aj3i3ifip" path="res://scenes/countbar.tscn" id="7_e1xol"]
+[ext_resource type="Script" path="res://scripts/play_sound.gd" id="8_7ryev"]
+[ext_resource type="AudioStream" uid="uid://cx6am3uwocc2a" path="res://assets/sa.mp3" id="9_q1c6u"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_54f1g"]
 texture = ExtResource("1_sihr0")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ic6w1"]
-texture = ExtResource("3_bo5ii")
+texture = ExtResource("3_dy73n")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_83nfq"]
-texture = ExtResource("3_bo5ii")
+texture = ExtResource("3_dy73n")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h7tls"]
 texture = ExtResource("2_fmsax")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nyd2f"]
-texture = ExtResource("3_bo5ii")
+texture = ExtResource("3_dy73n")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n8jnj"]
 texture = ExtResource("2_fmsax")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tqdl1"]
 texture = ExtResource("5_a7w6d")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agft6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gqjni"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2pfl1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s5m0a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jt52y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jnwtc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f10c5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ypao8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p0jhw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05gql"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -72,6 +95,10 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_n8jnj")
 script = ExtResource("3_8x7cv")
 metadata/_edit_use_anchors_ = true
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Salt"]
+stream = ExtResource("6_me184")
+volume_db = 14.083
+
 [node name="correct" type="Panel" parent="."]
 visible = false
 layout_mode = 1
@@ -87,5 +114,37 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_tqdl1")
 script = ExtResource("6_8t8sx")
 metadata/_edit_use_anchors_ = true
 
+[node name="back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 26.0
+offset_right = 162.0
+offset_bottom = 77.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_agft6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gqjni")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2pfl1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s5m0a")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jt52y")
+script = ExtResource("8_7ryev")
+
+[node name="sound" type="Button" parent="."]
+layout_mode = 0
+offset_left = 967.0
+offset_top = 28.0
+offset_right = 1124.0
+offset_bottom = 77.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jnwtc")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_f10c5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ypao8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p0jhw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_05gql")
+script = ExtResource("8_7ryev")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="sound"]
+stream = ExtResource("9_q1c6u")
+volume_db = 14.943
+
 [connection signal="pressed" from="Salt" to="Salt" method="_on_pressed"]
 [connection signal="pressed" from="Salt" to="correct" method="_on_salt_pressed"]
+[connection signal="pressed" from="back" to="back" method="_on_back"]
+[connection signal="pressed" from="sound" to="sound" method="_on_pressed"]

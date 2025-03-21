@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://by5mh7mw4u2vx"]
+
+[ext_resource type="Texture2D" uid="uid://cg5vc0tp118wc" path="res://assets/result.png" id="1_3oqky"]
+[ext_resource type="PackedScene" uid="uid://dfhrvfqrrweth" path="res://scenes/exit.tscn" id="2_dcrdx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yrwcx"]
+texture = ExtResource("1_3oqky")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gkdjj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxyom"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e23sy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2vyro"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_obi8v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_est02"]
+
+[node name="Result" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_yrwcx")
+metadata/_edit_use_anchors_ = true
+
+[node name="Exit" parent="." instance=ExtResource("2_dcrdx")]
+layout_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 269.0
+offset_right = 219.0
+offset_bottom = 432.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_gkdjj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jxyom")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 271.0
+offset_right = 394.0
+offset_bottom = 434.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e23sy")
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 269.0
+offset_right = 576.0
+offset_bottom = 432.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2vyro")
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 267.0
+offset_right = 814.0
+offset_bottom = 430.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_obi8v")
+
+[node name="Button5" type="Button" parent="."]
+layout_mode = 0
+offset_left = 865.0
+offset_top = 267.0
+offset_right = 1052.0
+offset_bottom = 430.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_est02")

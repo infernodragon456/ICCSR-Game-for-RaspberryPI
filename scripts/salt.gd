@@ -18,8 +18,13 @@ func _process(delta: float) -> void:
 	else:
 		modulate.a = 1
 
+@onready var audio_player = $AudioStreamPlayer2D	
+
 
 func _on_pressed() -> void:
 	shouldModulate = false
+	if audio_player and not audio_player.playing:
+		audio_player.play()
+		
 	disabled = true
 	pass # Replace with function body.
