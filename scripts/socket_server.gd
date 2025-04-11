@@ -22,4 +22,22 @@ func _process(_delta):
 		if coords.size() == 2:
 			var x := coords[0].to_int()
 			var y := coords[1].to_int()
-			print("Mouse Click Received at:", x, y)
+			var click_position := Vector2(x, y)
+
+			var ev := InputEventMouseButton.new()
+			ev.position = click_position
+			ev.global_position = click_position
+			ev.button_index = MOUSE_BUTTON_LEFT
+			ev.pressed = true
+			ev.double_click = false
+			ev.factor = 1.0
+
+			# Simulate mouse press
+			get_viewport().push_input(ev)
+
+			# Simulate mouse release shortly after
+			await get_tree().create_timer(0.01).timeout
+			ev.pressed = false
+			get_viewport().push_input(ev)
+
+			print("Simulated mouse click at:", click_position)

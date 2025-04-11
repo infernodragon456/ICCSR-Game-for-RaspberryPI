@@ -10,6 +10,8 @@ var swing_found: bool = false
 var school_found: bool = false
 var see_saw_found: bool = false
 var slide_found: bool = false
+var last_click_position: Vector2 = Vector2.ZERO
+var has_new_click := false
 # You can add functions to modify these variables
 func enable_practice_mode() -> void:
 	practice_mode = true
