@@ -264,12 +264,14 @@ layout_mode = 1
 [node name="Panel2" type="Panel" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 369.0
-offset_top = 289.0
-offset_right = 767.0
-offset_bottom = 390.0
+anchor_left = 0.320313
+anchor_top = 0.445988
+anchor_right = 0.665799
+anchor_bottom = 0.601852
+offset_bottom = -3.05176e-05
 theme_override_styles/panel = SubResource("StyleBoxTexture_ct4r1")
 script = ExtResource("7_ayqp4")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="sound" to="sound" method="_on_pressed"]
 [connection signal="pressed" from="back" to="back" method="_on_back"]

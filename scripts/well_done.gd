@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 		Global.reset_star_count()
 		Global.finished_round = false
 		get_tree().change_scene_to_file(Global.next_scene)
-		
+		visible = false
 	else:
 		visible = false
 	pass

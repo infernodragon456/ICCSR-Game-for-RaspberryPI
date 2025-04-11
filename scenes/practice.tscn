@@ -123,29 +123,31 @@ metadata/_edit_use_anchors_ = true
 
 [node name="back" type="Button" parent="."]
 layout_mode = 0
-offset_left = 30.0
-offset_top = 26.0
-offset_right = 162.0
-offset_bottom = 77.0
+anchor_left = 0.0260417
+anchor_top = 0.0401235
+anchor_right = 0.140625
+anchor_bottom = 0.118827
 theme_override_styles/focus = SubResource("StyleBoxEmpty_agft6")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_gqjni")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_2pfl1")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_s5m0a")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_jt52y")
 script = ExtResource("8_7ryev")
+metadata/_edit_use_anchors_ = true
 
 [node name="sound" type="Button" parent="."]
 layout_mode = 0
-offset_left = 967.0
-offset_top = 28.0
-offset_right = 1124.0
-offset_bottom = 77.0
+anchor_left = 0.83941
+anchor_top = 0.0432099
+anchor_right = 0.975694
+anchor_bottom = 0.118827
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jnwtc")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_f10c5")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_ypao8")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_p0jhw")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_05gql")
 script = ExtResource("8_7ryev")
+metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="sound"]
 stream = ExtResource("9_q1c6u")
