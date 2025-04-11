@@ -41,15 +41,16 @@ autoplay = true
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 491.0
-offset_top = 426.0
-offset_right = 678.0
-offset_bottom = 509.0
+anchor_left = 0.426215
+anchor_top = 0.657407
+anchor_right = 0.588542
+anchor_bottom = 0.785494
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2ngon")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_0ghou")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_xjaff")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_i2i4f")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_w5oni")
 script = ExtResource("2_y8vex")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button" to="Button" method="_on_click"]
