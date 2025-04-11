@@ -1,0 +1,35 @@
+import socket
+
+def main():
+	host = '127.0.0.1'  # IP of the Godot server
+	port = 12345        # Port to match Godot
+
+	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	s.connect((host, port))
+
+	print("Connected to server. (Press Ctrl+C to stop)")
+	
+	# Hard-coded positions to send
+	positions = [
+		(100, 200),
+		(300, 400),
+		(500, 300),
+		(200, 500)
+	]
+	
+	try:
+		for x, y in positions:
+			input(f"Press Enter to send position ({x},{y})...")
+			message = f"{x},{y}"
+			s.sendall(message.encode())
+			print(f"Sent: {message}")
+			
+		print("All positions sent. Press Enter to exit...")
+		input()
+	except KeyboardInterrupt:
+		print("Stopping...")
+	finally:
+		s.close()
+
+if __name__ == "__main__":
+	main()
