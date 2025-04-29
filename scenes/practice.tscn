@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cs7hlji85af23"]
+[gd_scene load_steps=30 format=3 uid="uid://c8xgpxsg6gelk"]
 
 [ext_resource type="Texture2D" uid="uid://d32etpk843t8j" path="res://assets/practice_bg.png" id="1_sihr0"]
 [ext_resource type="Script" path="res://scripts/game_bg.gd" id="2_ev1t0"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bc45aj3i3ifip" path="res://scenes/countbar.tscn" id="7_e1xol"]
 [ext_resource type="Script" path="res://scripts/play_sound.gd" id="8_7ryev"]
 [ext_resource type="AudioStream" uid="uid://cx6am3uwocc2a" path="res://assets/sa.mp3" id="9_q1c6u"]
-[ext_resource type="PackedScene" uid="uid://bd0y7wj25cx2x" path="res://scenes/well_done.tscn" id="11_3pysm"]
+[ext_resource type="PackedScene" uid="uid://b8y4s3xyapiar" path="res://scenes/welldone_new.tscn" id="11_r23f8"]
 [ext_resource type="AudioStream" uid="uid://dgsyro82lnn14" path="res://assets/correct.mp3" id="11_i6dru"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_54f1g"]
@@ -103,10 +103,6 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("6_me184")
 volume_db = 14.083
 
-[node name="Control" parent="." instance=ExtResource("11_3pysm")]
-visibility_layer = 2
-layout_mode = 1
-
 [node name="correct" type="Panel" parent="."]
 visible = false
 layout_mode = 1
@@ -138,6 +134,10 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_s5m0a")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_jt52y")
 script = ExtResource("8_7ryev")
 metadata/_edit_use_anchors_ = true
+
+[node name="WelldoneNew" parent="." instance=ExtResource("11_r23f8")]
+layout_mode = 1
+mouse_filter = 2
 
 [node name="sound" type="Button" parent="."]
 layout_mode = 0

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8y4s3xyapiar"]
+
+[ext_resource type="Script" path="res://scenes/welldone_new.gd" id="1_rdlqt"]
+[ext_resource type="Texture2D" uid="uid://b5vq1ig5voa4u" path="res://assets/welldone.png" id="1_v4l7x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c2ant"]
+texture = ExtResource("1_v4l7x")
+
+[node name="WelldoneNew" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.203993
+anchor_top = 0.17284
+anchor_right = 0.788194
+anchor_bottom = 0.901235
+theme_override_styles/panel = SubResource("StyleBoxTexture_c2ant")
+script = ExtResource("1_rdlqt")
+metadata/_edit_use_anchors_ = true
