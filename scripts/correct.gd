@@ -1,8 +1,9 @@
 extends Panel
-
+var audio_player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	audio_player = $AudioStreamPlayer2D
 	pass # Replace with function body.
 
 
@@ -12,6 +13,7 @@ func _process(delta: float) -> void:
 
 
 func _on_salt_pressed() -> void:
+	audio_player.play()
 	visible = true
 	Global.increment_star_count()
 	await get_tree().create_timer(1.0).timeout
