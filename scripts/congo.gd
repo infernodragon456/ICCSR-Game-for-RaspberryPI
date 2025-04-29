@@ -14,6 +14,9 @@ func _process(delta: float) -> void:
 
 
 func _on_any_pressed() -> void:
+	# Set the size to 100x100
+	# custom_minimum_size = Vector2(100, 100)
+	# size = Vector2(100, 100)
 	audio_player.play()
 	visible = true
 	Global.increment_star_count()

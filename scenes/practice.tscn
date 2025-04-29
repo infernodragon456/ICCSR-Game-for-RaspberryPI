@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c8xgpxsg6gelk"]
+[gd_scene load_steps=31 format=3 uid="uid://cs7hlji85af23"]
 
 [ext_resource type="Texture2D" uid="uid://d32etpk843t8j" path="res://assets/practice_bg.png" id="1_sihr0"]
 [ext_resource type="Script" path="res://scripts/game_bg.gd" id="2_ev1t0"]
@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bc45aj3i3ifip" path="res://scenes/countbar.tscn" id="7_e1xol"]
 [ext_resource type="Script" path="res://scripts/play_sound.gd" id="8_7ryev"]
 [ext_resource type="AudioStream" uid="uid://cx6am3uwocc2a" path="res://assets/sa.mp3" id="9_q1c6u"]
-[ext_resource type="PackedScene" uid="uid://b8y4s3xyapiar" path="res://scenes/welldone_new.tscn" id="11_r23f8"]
 [ext_resource type="AudioStream" uid="uid://dgsyro82lnn14" path="res://assets/correct.mp3" id="11_i6dru"]
+[ext_resource type="PackedScene" path="res://scenes/welldone_new.tscn" id="11_r23f8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_54f1g"]
 texture = ExtResource("1_sihr0")

@@ -22,4 +22,6 @@ func _process(delta: float) -> void:
 			tree.change_scene_to_file("res://scenes/result.tscn")
 
 func _on_pressed() -> void:
+	custom_minimum_size = Vector2(100, 100)
+	size = Vector2(100, 100)
 	disabled = true
