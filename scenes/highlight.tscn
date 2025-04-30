@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://b77xnwu8f1gdf"]
+
+[ext_resource type="Texture2D" uid="uid://cphrbi5ew0urg" path="res://assets/highlight.png" id="1_bg0yt"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.265625
+anchor_bottom = 0.285494
+offset_right = -266.0
+offset_bottom = -145.0
+texture_normal = ExtResource("1_bg0yt")
+texture_hover = ExtResource("1_bg0yt")
+metadata/_edit_use_anchors_ = true

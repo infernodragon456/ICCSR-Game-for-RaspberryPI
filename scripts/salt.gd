@@ -1,9 +1,9 @@
 extends Button
 var shouldModulate = true
-
+var audio_player
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	audio_player  = $AudioStreamPlayer2D
 	pass # Replace with function body.
 
 
@@ -18,11 +18,11 @@ func _process(delta: float) -> void:
 	else:
 		modulate.a = 1
 
-@onready var audio_player = $AudioStreamPlayer2D	
+	
 
 
 func _on_pressed() -> void:
-	Global.next_scene = "res://scenes/are_you_ready.tscn"
+	#Global.next_scene = "res://scenes/are_you_ready.tscn"
 	shouldModulate = false
 	if audio_player and not audio_player.playing:
 		audio_player.play()
