@@ -10,5 +10,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+
+@onready var audio_player = $AudioStreamPlayer2D	
+
 func _on_pressed() -> void:
+	if audio_player and not audio_player.playing:
+		audio_player.play()
 	disabled = true

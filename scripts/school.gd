@@ -21,7 +21,11 @@ func _process(delta: float) -> void:
 			await timer.timeout
 			tree.change_scene_to_file("res://scenes/result.tscn")
 
+@onready var audio_player = $AudioStreamPlayer2D	
+
 func _on_pressed() -> void:
 	#custom_minimum_size = Vector2(100, 100)
 	#size = Vector2(100, 100)
+	if audio_player and not audio_player.playing:
+		audio_player.play()
 	disabled = true
