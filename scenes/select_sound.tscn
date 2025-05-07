@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://yy0jqyl17vp0"]
+[gd_scene load_steps=24 format=3 uid="uid://yy0jqyl17vp0"]
 
 [ext_resource type="Texture2D" uid="uid://cpwp372lbaumj" path="res://assets/sound_selection_bg.png" id="1_qhxja"]
 [ext_resource type="Texture2D" uid="uid://56fc6l0clbqh" path="res://assets/Frame 3.png" id="2_514bf"]
 [ext_resource type="Script" path="res://scripts/sound_buttons.gd" id="3_g5wfa"]
 [ext_resource type="Texture2D" uid="uid://csripgjgxokp" path="res://assets/continue_class.png" id="4_3k5hv"]
+[ext_resource type="AudioStream" uid="uid://cx6am3uwocc2a" path="res://assets/sa.mp3" id="4_m4aio"]
 [ext_resource type="Script" path="res://scripts/continue_sound.gd" id="5_n4k3u"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sj024"]
@@ -76,6 +77,10 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_bny5c")
 script = ExtResource("3_g5wfa")
 metadata/_edit_use_anchors_ = true
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Button"]
+stream = ExtResource("4_m4aio")
+volume_db = 6.76
+
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
 anchor_left = 0.538194
@@ -117,6 +122,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_aenwp")
 script = ExtResource("5_n4k3u")
 metadata/_edit_use_anchors_ = true
 
+[connection signal="pressed" from="Button" to="Button" method="on_first_pressed"]
 [connection signal="pressed" from="Button" to="continue" method="_on_button_1_pressed"]
 [connection signal="pressed" from="Button2" to="continue" method="_on_button_2_pressed"]
 [connection signal="pressed" from="continue" to="continue" method="on_continue2_pressed"]

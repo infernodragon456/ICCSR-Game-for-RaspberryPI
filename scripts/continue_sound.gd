@@ -10,6 +10,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+
+
 func _on_button_1_pressed() -> void:
 	var continue_button = get_node("../continue")  # Adjust the path if needed
 	continue_button.disabled = false

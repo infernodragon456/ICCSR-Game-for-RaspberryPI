@@ -5,18 +5,11 @@ extends Button
 func _ready() -> void:
 	pass # Replace with function body.
 
-
+@onready var audio_player = $AudioStreamPlayer2D	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-@onready var audio_player = $AudioStreamPlayer2D	
-
-func on_first_pressed():
+	
+func on_pressed() :
 	if audio_player and not audio_player.playing:
 		audio_player.play()
-	print("Sh")
-	
-	
-func on_second_pressed():
-	print("Sa")

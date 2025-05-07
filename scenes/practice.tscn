@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cphrbi5ew0urg" path="res://assets/highlight.png" id="14_4p8fp"]
 [ext_resource type="Texture2D" uid="uid://drxey77hpqyy5" path="res://assets/Tick.png" id="14_nyyg4"]
 [ext_resource type="AudioStream" uid="uid://dcgjbdw0haswc" path="res://assets/saucer.mp3" id="16_4wqq0"]
-[ext_resource type="AudioStream" uid="uid://b2nhgsgurtlyc" path="res://assets/spoon.mp3" id="17_a2o2a"]
+[ext_resource type="AudioStream" uid="uid://cf50dyrqd40oo" path="res://assets/spoon.mp3" id="17_a2o2a"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_54f1g"]
 texture = ExtResource("1_sihr0")
