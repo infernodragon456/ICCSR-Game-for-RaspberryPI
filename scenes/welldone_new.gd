@@ -7,15 +7,26 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if (Global.finished_round):
 		visible = true
 		await get_tree().create_timer(2.0).timeout
-		
 		Global.reset_star_count()
 		Global.finished_round = false
 		get_tree().change_scene_to_file(Global.next_scene)
 		visible = false
 	else:
 		visible = false
-	pass
+	
+#func _process(_delta: float) -> void:
+	#if Global.finished_round:
+		#Global.finished_round = false
+		#start_scene_transition()
+	#else:
+		#visible = false
+#
+#func start_scene_transition() -> void:
+	#visible = true
+	#await get_tree().create_timer(2.0).timeout
+	#Global.reset_star_count()
+	#get_tree().change_scene_to_file(Global.next_scene)

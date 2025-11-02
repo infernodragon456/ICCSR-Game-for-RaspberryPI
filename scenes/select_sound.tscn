@@ -65,11 +65,12 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_sj024")
 
 [node name="Button" type="Button" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.366319
-anchor_top = 0.438272
+anchor_top = 0.433642
 anchor_right = 0.460069
-anchor_bottom = 0.600309
+anchor_bottom = 0.595679
 theme_override_styles/focus = SubResource("StyleBoxTexture_s63mj")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_x1obq")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_qk4ox")
@@ -95,11 +96,12 @@ script = ExtResource("3_g5wfa")
 metadata/_edit_use_anchors_ = true
 
 [node name="continue" type="Button" parent="."]
-layout_mode = 0
-anchor_left = 0.369792
-anchor_top = 0.675926
-anchor_right = 0.631076
-anchor_bottom = 0.850309
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.368056
+anchor_top = 0.66358
+anchor_right = 0.62934
+anchor_bottom = 0.837963
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_52tom")
 theme_override_styles/hover = SubResource("StyleBoxTexture_dgp33")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_21giv")

@@ -1,0 +1,269 @@
+[gd_scene load_steps=36 format=3 uid="uid://bty1psbjgwsh8"]
+
+[ext_resource type="Texture2D" uid="uid://dg4u1k7vdmw52" path="res://assets/kitchen_bg.png" id="1_hcs4r"]
+[ext_resource type="PackedScene" uid="uid://bc45aj3i3ifip" path="res://scenes/countbar.tscn" id="2_yihnb"]
+[ext_resource type="Script" path="res://scripts/game_sa.gd" id="3_b3og1"]
+[ext_resource type="AudioStream" uid="uid://cx6am3uwocc2a" path="res://assets/sa.mp3" id="4_o7nbm"]
+[ext_resource type="Texture2D" uid="uid://drxey77hpqyy5" path="res://assets/Tick.png" id="5_m2mpt"]
+[ext_resource type="Script" path="res://sun.gd" id="6_5acl1"]
+[ext_resource type="Script" path="res://scripts/slide.gd" id="7_e4fs1"]
+[ext_resource type="Script" path="res://scripts/stove.gd" id="8_bp3dc"]
+[ext_resource type="Script" path="res://scripts/wrong_audio.gd" id="14_d6tmj"]
+[ext_resource type="AudioStream" uid="uid://wiqn40lvjh27" path="res://assets/wrong.mp3" id="15_3oo1x"]
+[ext_resource type="Texture2D" uid="uid://cowfw2gngaucl" path="res://assets/Correct!.png" id="17_b2oys"]
+[ext_resource type="Script" path="res://scripts/congo.gd" id="18_i58dn"]
+[ext_resource type="AudioStream" uid="uid://dgsyro82lnn14" path="res://assets/correct.mp3" id="19_c6fky"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aeapu"]
+texture = ExtResource("1_hcs4r")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2832"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5bjd1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ef3ab"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_43cnu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vxhal"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_in65s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2sq35"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mrqw1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_41q7q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2vi8u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nnl8j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_as278"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mqwfr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_68j7m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dyklv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8u4w6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1xikw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c5g72"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q47sd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lsfkn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ct4r1"]
+texture = ExtResource("17_b2oys")
+
+[node name="StartSa" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_aeapu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" parent="." instance=ExtResource("2_yihnb")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.234375
+anchor_top = 0.0462963
+anchor_right = 1.23438
+anchor_bottom = 1.0463
+offset_bottom = -6.10352e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="sound" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.841146
+anchor_top = 0.0416667
+anchor_right = 0.980035
+anchor_bottom = 0.12037
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x2832")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5bjd1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ef3ab")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_43cnu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vxhal")
+script = ExtResource("3_b3og1")
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="sound"]
+stream = ExtResource("4_o7nbm")
+volume_db = 15.0
+
+[node name="back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0277778
+anchor_top = 0.037037
+anchor_right = 0.145833
+anchor_bottom = 0.117284
+theme_override_styles/focus = SubResource("StyleBoxEmpty_in65s")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_2sq35")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mrqw1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_41q7q")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2vi8u")
+script = ExtResource("3_b3og1")
+metadata/_edit_use_anchors_ = true
+
+[node name="soucer" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.375868
+anchor_top = 0.637346
+anchor_right = 0.507813
+anchor_bottom = 0.817901
+texture_pressed = ExtResource("5_m2mpt")
+texture_disabled = ExtResource("5_m2mpt")
+texture_focused = ExtResource("5_m2mpt")
+stretch_mode = 3
+script = ExtResource("6_5acl1")
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="soucer"]
+
+[node name="samosa" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.677083
+anchor_top = 0.760802
+anchor_right = 0.829861
+anchor_bottom = 0.964506
+texture_pressed = ExtResource("5_m2mpt")
+texture_disabled = ExtResource("5_m2mpt")
+texture_focused = ExtResource("5_m2mpt")
+stretch_mode = 3
+script = ExtResource("7_e4fs1")
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="samosa"]
+volume_db = 7.932
+
+[node name="sink" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.659722
+anchor_top = 0.570988
+anchor_right = 0.798611
+anchor_bottom = 0.705247
+texture_pressed = ExtResource("5_m2mpt")
+texture_disabled = ExtResource("5_m2mpt")
+texture_focused = ExtResource("5_m2mpt")
+stretch_mode = 3
+script = ExtResource("7_e4fs1")
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="sink"]
+volume_db = 6.857
+
+[node name="stove" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.521701
+anchor_top = 0.674383
+anchor_right = 0.634549
+anchor_bottom = 0.808642
+texture_pressed = ExtResource("5_m2mpt")
+texture_disabled = ExtResource("5_m2mpt")
+texture_focused = ExtResource("5_m2mpt")
+stretch_mode = 3
+script = ExtResource("8_bp3dc")
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="stove"]
+volume_db = 7.429
+
+[node name="sponge" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.884549
+anchor_top = 0.695988
+anchor_right = 0.97309
+anchor_bottom = 0.830247
+texture_pressed = ExtResource("5_m2mpt")
+texture_disabled = ExtResource("5_m2mpt")
+texture_focused = ExtResource("5_m2mpt")
+stretch_mode = 3
+script = ExtResource("7_e4fs1")
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="sponge"]
+volume_db = 8.0
+
+[node name="hint" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.712674
+anchor_top = 0.037037
+anchor_right = 0.828994
+anchor_bottom = 0.115741
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nnl8j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_as278")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mqwfr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_68j7m")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dyklv")
+metadata/_edit_use_anchors_ = true
+
+[node name="wrong_audio" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0251736
+anchor_top = 0.165123
+anchor_right = 0.491319
+anchor_bottom = 0.561728
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8u4w6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1xikw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_c5g72")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_q47sd")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lsfkn")
+script = ExtResource("14_d6tmj")
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="wrong_audio"]
+stream = ExtResource("15_3oo1x")
+volume_db = -5.2
+
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+anchor_left = 0.320313
+anchor_top = 0.445988
+anchor_right = 0.665799
+anchor_bottom = 0.601852
+offset_bottom = -3.05176e-05
+theme_override_styles/panel = SubResource("StyleBoxTexture_ct4r1")
+script = ExtResource("18_i58dn")
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Panel2"]
+stream = ExtResource("19_c6fky")
+volume_db = -4.0
+
+[connection signal="pressed" from="sound" to="sound" method="_on_pressed"]
+[connection signal="pressed" from="back" to="back" method="_on_backgardenresult"]
+[connection signal="pressed" from="soucer" to="soucer" method="_on_pressed"]
+[connection signal="pressed" from="soucer" to="Panel2" method="_on_any_pressed"]
+[connection signal="pressed" from="samosa" to="samosa" method="_on_pressed"]
+[connection signal="pressed" from="samosa" to="Panel2" method="_on_any_pressed"]
+[connection signal="pressed" from="sink" to="sink" method="_on_pressed"]
+[connection signal="pressed" from="sink" to="Panel2" method="_on_any_pressed"]
+[connection signal="pressed" from="stove" to="stove" method="_on_pressed"]
+[connection signal="pressed" from="stove" to="Panel2" method="_on_any_pressed"]
+[connection signal="pressed" from="sponge" to="sponge" method="_on_pressed"]
+[connection signal="pressed" from="sponge" to="Panel2" method="_on_any_pressed"]
+[connection signal="pressed" from="wrong_audio" to="wrong_audio" method="on_pressed"]

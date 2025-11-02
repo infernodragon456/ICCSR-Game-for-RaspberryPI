@@ -1,11 +1,5 @@
 extends TextureButton
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Global.star_count == 5 and is_inside_tree():
@@ -20,7 +14,7 @@ func _process(delta: float) -> void:
 			timer = tree.create_timer(1.0)
 			await timer.timeout
 			Global.reset_star_count()
-			tree.change_scene_to_file("res://scenes/result.tscn")
+			tree.change_scene_to_file("res://scenes/result_beach.tscn")
 
 @onready var audio_player = $AudioStreamPlayer2D	
 

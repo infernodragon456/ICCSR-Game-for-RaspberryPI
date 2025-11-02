@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 			timer = tree.create_timer(1.0)
 			await timer.timeout
 			Global.reset_star_count()
-			tree.change_scene_to_file("res://scenes/result.tscn")
+			tree.change_scene_to_file("res://scenes/result_kitchen.tscn")
 
 @onready var audio_player = $AudioStreamPlayer2D	
 

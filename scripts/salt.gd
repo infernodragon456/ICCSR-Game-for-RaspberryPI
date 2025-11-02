@@ -20,7 +20,6 @@ func _process(delta: float) -> void:
 
 	
 
-
 func _on_pressed() -> void:
 	#Global.next_scene = "res://scenes/are_you_ready.tscn"
 	shouldModulate = false

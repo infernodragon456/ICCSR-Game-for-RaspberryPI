@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://j4oewdjr8wo1"]
+[gd_scene load_steps=41 format=3 uid="uid://j4oewdjr8wo1"]
 
 [ext_resource type="PackedScene" uid="uid://bc45aj3i3ifip" path="res://scenes/countbar.tscn" id="1_eve7v"]
 [ext_resource type="Texture2D" uid="uid://bj6m7uax6xvlb" path="res://assets/start_screen_sa.png" id="1_rgd81"]
@@ -15,7 +15,6 @@
 [ext_resource type="Script" path="res://scripts/school.gd" id="10_gpx6g"]
 [ext_resource type="AudioStream" uid="uid://be51lxgraflho" path="res://assets/swing.mp3" id="11_1jjjg"]
 [ext_resource type="AudioStream" uid="uid://diglt47gr85va" path="res://assets/school.mp3" id="11_qm7r2"]
-[ext_resource type="PackedScene" uid="uid://b8y4s3xyapiar" path="res://scenes/welldone_new.tscn" id="12_jn3y5"]
 [ext_resource type="AudioStream" uid="uid://dgsyro82lnn14" path="res://assets/correct.mp3" id="13_srjn1"]
 [ext_resource type="Script" path="res://scripts/wrong_audio.gd" id="14_vnr7a"]
 [ext_resource type="AudioStream" uid="uid://wiqn40lvjh27" path="res://assets/wrong.mp3" id="15_3dqks"]
@@ -241,14 +240,6 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("15_3dqks")
 volume_db = -5.2
 
-[node name="WelldoneNew" parent="." instance=ExtResource("12_jn3y5")]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_top = -0.00308642
-anchor_bottom = 0.996914
-mouse_filter = 2
-
 [node name="Panel2" type="Panel" parent="."]
 visible = false
 layout_mode = 0
@@ -266,7 +257,7 @@ stream = ExtResource("13_srjn1")
 volume_db = -4.0
 
 [connection signal="pressed" from="sound" to="sound" method="_on_pressed"]
-[connection signal="pressed" from="back" to="back" method="_on_back"]
+[connection signal="pressed" from="back" to="back" method="_on_back1"]
 [connection signal="pressed" from="sun" to="sun" method="_on_pressed"]
 [connection signal="pressed" from="sun" to="Panel2" method="_on_any_pressed"]
 [connection signal="pressed" from="slide" to="slide" method="_on_pressed"]

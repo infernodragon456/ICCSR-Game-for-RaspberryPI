@@ -18,8 +18,8 @@ func _collect_children(node: Node) -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	child_nodes = get_all_child_nodes()
+	Global.reset_star_count()
 	print(child_nodes)
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
