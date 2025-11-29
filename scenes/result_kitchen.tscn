@@ -1,11 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://rig68rou6ww8"]
+[gd_scene load_steps=20 format=3 uid="uid://rig68rou6ww8"]
 
-[ext_resource type="Texture2D" uid="uid://h58xp2oc62o4" path="res://assets/r_k.png" id="1_4c1jm"]
+[ext_resource type="Texture2D" uid="uid://dy3g7dlpomjtb" path="res://scenes/kitchen12.png" id="1_csq48"]
 [ext_resource type="PackedScene" uid="uid://dfhrvfqrrweth" path="res://scenes/exit.tscn" id="2_o13xb"]
 [ext_resource type="Script" path="res://scenes/next_round.gd" id="3_t6uol"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yrwcx"]
-texture = ExtResource("1_4c1jm")
+texture = ExtResource("1_csq48")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gkdjj"]
 
@@ -21,9 +21,21 @@ texture = ExtResource("1_4c1jm")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8u7ol"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vqc0w"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gv075"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b1afk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lkw3q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5xxv5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_me07m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4abr5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_far51"]
 
 [node name="Result" type="Control"]
 layout_mode = 3
@@ -45,6 +57,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Exit" parent="." instance=ExtResource("2_o13xb")]
 layout_mode = 1
+offset_left = 4.0
+offset_top = -6.0
+offset_right = 4.0
+offset_bottom = -6.0
 
 [node name="Button" type="Button" parent="."]
 visible = false
@@ -93,16 +109,32 @@ offset_bottom = 430.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_est02")
 
 [node name="next_round" type="Button" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.71441
-anchor_top = 0.729938
+anchor_top = 0.794753
 anchor_right = 0.974826
-anchor_bottom = 0.867284
+anchor_bottom = 0.932099
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8u7ol")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vqc0w")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_gv075")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_b1afk")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_est02")
 script = ExtResource("3_t6uol")
 metadata/_edit_use_anchors_ = true
 
+[node name="changeletter" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.344618
+anchor_top = 0.782407
+anchor_right = 0.608507
+anchor_bottom = 0.941358
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lkw3q")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5xxv5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_me07m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4abr5")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_far51")
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="next_round" to="next_round" method="_tobeach"]
+[connection signal="pressed" from="changeletter" to="next_round" method="_toletter"]

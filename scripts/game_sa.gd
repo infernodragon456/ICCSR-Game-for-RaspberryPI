@@ -5,22 +5,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-#
-#func _on_sun_pressed() -> void:
-	#Global.enable_sun()
-#
-#func _on_swing_pressed() -> void:
-	#Global.enable_swing()
-#
-#func _on_school_pressed() -> void:
-	#Global.enable_school()
-#
-#func _on_see_saw_pressed() -> void:
-	#Global.enable_see_saw()
-#
-#func _on_slide_pressed() -> void:
-	#Global.enable_slide()
-	
+
 @onready var audio_player = $AudioStreamPlayer2D	
 
 func _on_pressed():

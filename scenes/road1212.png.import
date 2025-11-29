@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br0yeqsavth4u"
-path="res://.godot/imported/beach_result.png-8890ade6994000ff093949684613e08d.ctex"
+uid="uid://k0yxnnp72ltu"
+path="res://.godot/imported/road1212.png-ffd449366eb8cf548166963eb215d312.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/beach_result.png"
-dest_files=["res://.godot/imported/beach_result.png-8890ade6994000ff093949684613e08d.ctex"]
+source_file="res://scenes/road1212.png"
+dest_files=["res://.godot/imported/road1212.png-ffd449366eb8cf548166963eb215d312.ctex"]
 
 [params]
 

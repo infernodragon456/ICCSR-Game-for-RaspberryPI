@@ -1,0 +1,143 @@
+[gd_scene load_steps=28 format=3 uid="uid://jacufscq86kw"]
+
+[ext_resource type="Texture2D" uid="uid://btljdrafiyeys" path="res://scenes/lastscreen.png" id="1_dfwae"]
+[ext_resource type="PackedScene" uid="uid://dfhrvfqrrweth" path="res://scenes/exit.tscn" id="2_s5o4q"]
+[ext_resource type="Texture2D" uid="uid://b270k48sv2mtc" path="res://assets/Back.png" id="3_xniuj"]
+[ext_resource type="Script" path="res://scripts/back_areuready.gd" id="4_smd61"]
+[ext_resource type="Script" path="res://scripts/play_sound.gd" id="5_64bsa"]
+[ext_resource type="AudioStream" uid="uid://cx6am3uwocc2a" path="res://assets/sa.mp3" id="6_wnrda"]
+[ext_resource type="Script" path="res://scripts/for_audio.gd" id="7_rnqya"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gulhv"]
+texture = ExtResource("1_dfwae")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wkws1"]
+texture = ExtResource("3_xniuj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r5iou"]
+texture = ExtResource("3_xniuj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u0l40"]
+texture = ExtResource("3_xniuj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6jtbj"]
+texture = ExtResource("3_xniuj")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_chxx2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ibd7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8po64"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1awan"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6apds"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j3ksp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c8yun"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4olvu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ajqrx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_57of7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0dj84"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1i3ja"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dgfuk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56nce"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pqyr5"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_gulhv")
+
+[node name="Exit" parent="." instance=ExtResource("2_s5o4q")]
+layout_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0225694
+anchor_top = 0.0447531
+anchor_right = 0.142361
+anchor_bottom = 0.12037
+theme_override_styles/focus = SubResource("StyleBoxTexture_wkws1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r5iou")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_u0l40")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6jtbj")
+script = ExtResource("4_smd61")
+metadata/_edit_use_anchors_ = true
+
+[node name="audio_play" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.706597
+anchor_top = 0.0432099
+anchor_right = 0.842014
+anchor_bottom = 0.117284
+theme_override_styles/focus = SubResource("StyleBoxEmpty_chxx2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8ibd7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8po64")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1awan")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6apds")
+script = ExtResource("5_64bsa")
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="audio_play"]
+position = Vector2(-814, -28)
+stream = ExtResource("6_wnrda")
+volume_db = 10.866
+
+[node name="restart" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.436632
+anchor_top = 0.453704
+anchor_right = 0.633681
+anchor_bottom = 0.570988
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j3ksp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_c8yun")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4olvu")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ajqrx")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_57of7")
+script = ExtResource("7_rnqya")
+metadata/_edit_use_anchors_ = true
+
+[node name="quitgame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.432292
+anchor_top = 0.628086
+anchor_right = 0.639757
+anchor_bottom = 0.751543
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0dj84")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1i3ja")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dgfuk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_56nce")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pqyr5")
+script = ExtResource("5_64bsa")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Back" to="Back" method="_pressed"]
+[connection signal="pressed" from="audio_play" to="audio_play" method="_on_pressed"]
+[connection signal="pressed" from="restart" to="restart" method="restartbutton"]
+[connection signal="pressed" from="quitgame" to="restart" method="quitgame"]

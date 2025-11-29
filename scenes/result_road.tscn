@@ -1,11 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cp1rkotcrsb0m"]
+[gd_scene load_steps=19 format=3 uid="uid://cp1rkotcrsb0m"]
 
-[ext_resource type="Texture2D" uid="uid://dhl3k6ledije4" path="res://assets/r_road1.png" id="1_7njgn"]
+[ext_resource type="Texture2D" uid="uid://dhogqwh4w2llq" path="res://scenes/road12.png" id="1_62hxv"]
 [ext_resource type="PackedScene" uid="uid://dfhrvfqrrweth" path="res://scenes/exit.tscn" id="2_2pj3k"]
 [ext_resource type="Script" path="res://scenes/next_round.gd" id="3_no1y3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yrwcx"]
-texture = ExtResource("1_7njgn")
+texture = ExtResource("1_62hxv")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gkdjj"]
 
@@ -24,6 +24,16 @@ texture = ExtResource("1_7njgn")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gv075"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b1afk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hgxnb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k3emu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xxu4q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0fiso"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m58m5"]
 
 [node name="Result" type="Control"]
 layout_mode = 3
@@ -45,6 +55,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Exit" parent="." instance=ExtResource("2_2pj3k")]
 layout_mode = 1
+offset_left = 8.0
+offset_top = -13.0
+offset_right = 8.0
+offset_bottom = -13.0
 
 [node name="Button" type="Button" parent="."]
 visible = false
@@ -93,14 +107,30 @@ offset_bottom = 430.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_est02")
 
 [node name="next_round" type="Button" parent="."]
-layout_mode = 0
-anchor_left = 0.703993
-anchor_top = 0.760802
-anchor_right = 0.96441
-anchor_bottom = 0.898148
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.722222
+anchor_top = 0.790123
+anchor_right = 0.982639
+anchor_bottom = 0.927469
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8u7ol")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_gv075")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_b1afk")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_est02")
 script = ExtResource("3_no1y3")
 metadata/_edit_use_anchors_ = true
+
+[node name="Button6" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.345486
+anchor_top = 0.782407
+anchor_right = 0.607639
+anchor_bottom = 0.938272
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hgxnb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_k3emu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xxu4q")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0fiso")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m58m5")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button6" to="next_round" method="_toletter"]

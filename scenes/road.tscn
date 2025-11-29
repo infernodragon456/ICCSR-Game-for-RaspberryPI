@@ -1,22 +1,30 @@
-[gd_scene load_steps=37 format=3 uid="uid://bgtis2yrqxpv2"]
+[gd_scene load_steps=45 format=3 uid="uid://bgtis2yrqxpv2"]
 
-[ext_resource type="Texture2D" uid="uid://dll1fnk377c7" path="res://assets/road_bg.png" id="1_mib2g"]
+[ext_resource type="Texture2D" uid="uid://k0yxnnp72ltu" path="res://scenes/road1212.png" id="1_s8oo8"]
 [ext_resource type="PackedScene" uid="uid://bc45aj3i3ifip" path="res://scenes/countbar.tscn" id="2_vayqq"]
 [ext_resource type="Script" path="res://scripts/game_sa.gd" id="3_l5gk0"]
 [ext_resource type="AudioStream" uid="uid://cx6am3uwocc2a" path="res://assets/sa.mp3" id="4_ciok0"]
 [ext_resource type="Texture2D" uid="uid://drxey77hpqyy5" path="res://assets/Tick.png" id="5_mjgfp"]
 [ext_resource type="Script" path="res://sun.gd" id="6_r4vpt"]
+[ext_resource type="Texture2D" uid="uid://cphrbi5ew0urg" path="res://assets/highlight.png" id="7_2ix3h"]
+[ext_resource type="Script" path="res://scripts/hintmodulate.gd" id="7_8x882"]
+[ext_resource type="AudioStream" uid="uid://cwhipvt3vl4b4" path="res://scenes/saree.mp3" id="7_o71di"]
 [ext_resource type="Script" path="res://scripts/slide.gd" id="7_wn8rq"]
 [ext_resource type="Script" path="res://scripts/swing.gd" id="8_inoxt"]
 [ext_resource type="Script" path="res://scripts/stone.gd" id="9_dg78q"]
 [ext_resource type="Script" path="res://scripts/wrong_audio.gd" id="10_j1nlt"]
+[ext_resource type="Script" path="res://scripts/hintroad.gd" id="10_j3hy3"]
+[ext_resource type="AudioStream" uid="uid://bfay73xybxjfo" path="res://scenes/stars.mp3" id="11_00mmn"]
 [ext_resource type="AudioStream" uid="uid://wiqn40lvjh27" path="res://assets/wrong.mp3" id="11_bl24e"]
+[ext_resource type="AudioStream" uid="uid://dnsvvh0xh1is5" path="res://scenes/scooter.mp3" id="12_hpy7o"]
+[ext_resource type="AudioStream" uid="uid://bi4y81ahv3blk" path="res://scenes/sky.mp3" id="13_0d1w2"]
 [ext_resource type="Texture2D" uid="uid://cowfw2gngaucl" path="res://assets/Correct!.png" id="13_1twb6"]
 [ext_resource type="Script" path="res://scripts/congo.gd" id="14_kw5kq"]
+[ext_resource type="AudioStream" uid="uid://by3yr3iwlddb2" path="res://scenes/stone.mp3" id="15_2ckjv"]
 [ext_resource type="AudioStream" uid="uid://dgsyro82lnn14" path="res://assets/correct.mp3" id="15_p5gli"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aeapu"]
-texture = ExtResource("1_mib2g")
+texture = ExtResource("1_s8oo8")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2832"]
 
@@ -83,18 +91,19 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.231771
-anchor_top = 0.0524691
+anchor_top = 0.0308642
 anchor_right = 1.23177
-anchor_bottom = 1.05247
+anchor_bottom = 1.03087
 offset_bottom = -6.10352e-05
 metadata/_edit_use_anchors_ = true
 
 [node name="sound" type="Button" parent="."]
-layout_mode = 0
-anchor_left = 0.841146
-anchor_top = 0.0416667
-anchor_right = 0.980035
-anchor_bottom = 0.12037
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.895833
+anchor_top = 0.029321
+anchor_right = 0.986979
+anchor_bottom = 0.108025
 theme_override_styles/focus = SubResource("StyleBoxEmpty_x2832")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_5bjd1")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_ef3ab")
@@ -110,10 +119,10 @@ volume_db = 15.0
 [node name="back" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0277778
-anchor_top = 0.037037
-anchor_right = 0.145833
-anchor_bottom = 0.117284
+anchor_left = 0.00954861
+anchor_top = 0.0138889
+anchor_right = 0.158854
+anchor_bottom = 0.12963
 theme_override_styles/focus = SubResource("StyleBoxEmpty_in65s")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_2sq35")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_mrqw1")
@@ -129,6 +138,10 @@ anchor_left = 0.465278
 anchor_top = 0.359568
 anchor_right = 0.572049
 anchor_bottom = 0.800926
+offset_left = -0.000244141
+offset_top = -6.10352e-05
+offset_right = -0.000244141
+offset_bottom = -6.10352e-05
 texture_pressed = ExtResource("5_mjgfp")
 texture_disabled = ExtResource("5_mjgfp")
 texture_focused = ExtResource("5_mjgfp")
@@ -137,14 +150,35 @@ script = ExtResource("6_r4vpt")
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Sari"]
+stream = ExtResource("7_o71di")
+volume_db = 7.391
+
+[node name="hintbox" type="TextureButton" parent="Sari"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.5
+offset_top = -142.0
+offset_right = 199.5
+offset_bottom = 42.9999
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.593366, 1.44)
+texture_normal = ExtResource("7_2ix3h")
+texture_hover = ExtResource("7_2ix3h")
+script = ExtResource("7_8x882")
 
 [node name="star" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.815972
-anchor_top = 0.192901
-anchor_right = 0.956597
-anchor_bottom = 0.37963
+anchor_left = 0.682292
+anchor_top = 0.20216
+anchor_right = 0.822917
+anchor_bottom = 0.388889
+scale = Vector2(1.81644, 1.52)
 texture_pressed = ExtResource("5_mjgfp")
 texture_disabled = ExtResource("5_mjgfp")
 texture_focused = ExtResource("5_mjgfp")
@@ -153,7 +187,26 @@ script = ExtResource("7_wn8rq")
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="star"]
+stream = ExtResource("11_00mmn")
 volume_db = 7.932
+
+[node name="hintbox" type="TextureButton" parent="star"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.6065
+offset_top = -85.5
+offset_right = 218.393
+offset_bottom = 99.4998
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.612811, 0.966316)
+texture_normal = ExtResource("7_2ix3h")
+texture_hover = ExtResource("7_2ix3h")
+script = ExtResource("7_8x882")
 
 [node name="scooter" type="TextureButton" parent="."]
 layout_mode = 1
@@ -170,7 +223,26 @@ script = ExtResource("7_wn8rq")
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="scooter"]
+stream = ExtResource("12_hpy7o")
 volume_db = 6.857
+
+[node name="hintbox" type="TextureButton" parent="scooter"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -136.0
+offset_right = 193.0
+offset_bottom = 48.9999
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.755062, 1.74406)
+texture_normal = ExtResource("7_2ix3h")
+texture_hover = ExtResource("7_2ix3h")
+script = ExtResource("7_8x882")
 
 [node name="sky" type="TextureButton" parent="."]
 layout_mode = 1
@@ -187,15 +259,37 @@ script = ExtResource("8_inoxt")
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="sky"]
+stream = ExtResource("13_0d1w2")
 volume_db = 7.429
+
+[node name="hintbox" type="TextureButton" parent="sky"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -144.5
+offset_right = 174.0
+offset_bottom = 40.4999
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.953367, 1.56)
+texture_normal = ExtResource("7_2ix3h")
+texture_hover = ExtResource("7_2ix3h")
+script = ExtResource("7_8x882")
 
 [node name="stone" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.885417
-anchor_top = 0.887346
-anchor_right = 0.973958
-anchor_bottom = 1.0216
+anchor_left = 0.772569
+anchor_top = 0.700617
+anchor_right = 0.949651
+anchor_bottom = 0.899321
+offset_right = -101.999
+offset_bottom = -41.7599
+scale = Vector2(2, 1.48)
 texture_pressed = ExtResource("5_mjgfp")
 texture_disabled = ExtResource("5_mjgfp")
 texture_focused = ExtResource("5_mjgfp")
@@ -204,20 +298,40 @@ script = ExtResource("9_dg78q")
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="stone"]
-volume_db = 8.0
+stream = ExtResource("15_2ckjv")
+volume_db = 11.695
+
+[node name="hintbox" type="TextureButton" parent="stone"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.4997
+offset_top = -73.9056
+offset_right = 229.5
+offset_bottom = 111.094
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.493364, 0.729731)
+texture_normal = ExtResource("7_2ix3h")
+texture_hover = ExtResource("7_2ix3h")
+script = ExtResource("7_8x882")
 
 [node name="hint" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.712674
-anchor_top = 0.037037
-anchor_right = 0.828994
-anchor_bottom = 0.115741
+anchor_left = 0.698785
+anchor_top = 0.00462963
+anchor_right = 0.844618
+anchor_bottom = 0.132716
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nnl8j")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_as278")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_mqwfr")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_68j7m")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_dyklv")
+script = ExtResource("10_j3hy3")
 metadata/_edit_use_anchors_ = true
 
 [node name="wrong_audio" type="Button" parent="."]
@@ -256,7 +370,6 @@ stream = ExtResource("15_p5gli")
 volume_db = -4.0
 
 [connection signal="pressed" from="sound" to="sound" method="_on_pressed"]
-[connection signal="pressed" from="back" to="back" method="_on_back"]
 [connection signal="pressed" from="back" to="back" method="_on_backbeachresult"]
 [connection signal="pressed" from="Sari" to="Sari" method="_on_pressed"]
 [connection signal="pressed" from="Sari" to="Panel2" method="_on_any_pressed"]
@@ -268,4 +381,5 @@ volume_db = -4.0
 [connection signal="pressed" from="sky" to="Panel2" method="_on_any_pressed"]
 [connection signal="pressed" from="stone" to="stone" method="_on_pressed"]
 [connection signal="pressed" from="stone" to="Panel2" method="_on_any_pressed"]
+[connection signal="pressed" from="hint" to="hint" method="_on_Hint_pressed"]
 [connection signal="pressed" from="wrong_audio" to="wrong_audio" method="on_pressed"]

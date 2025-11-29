@@ -1,8 +1,8 @@
 extends TextureButton
-
-
+var pressed_once = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	pressed_once = false
 	pass # Replace with function body.
 
 
@@ -22,11 +22,14 @@ func _process(delta: float) -> void:
 			Global.reset_star_count()
 			tree.change_scene_to_file("res://scenes/result.tscn")
 
-@onready var audio_player = $AudioStreamPlayer2D	
+#@onready var audio_player = $AudioStreamPlayer2D	
 
 func _on_pressed() -> void:
 	#custom_minimum_size = Vector2(100, 100)
 	#size = Vector2(100, 100)
-	if audio_player and not audio_player.playing:
-		audio_player.play()
+	pressed_once = true
+	var hintbox = get_node("hintbox")
+	hintbox.shouldModulate = false
+	#if audio_player and not audio_player.playing:
+	#	audio_player.play()
 	disabled = true

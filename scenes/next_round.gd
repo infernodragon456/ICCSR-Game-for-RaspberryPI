@@ -23,3 +23,5 @@ func _tobeach():
 func _togarden():
 	get_tree().change_scene_to_file("res://scenes/garden.tscn")
 	
+func _toletter():
+	get_tree().change_scene_to_file("res://scenes/choose_letter.tscn")

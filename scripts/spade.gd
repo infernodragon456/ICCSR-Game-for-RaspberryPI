@@ -1,4 +1,9 @@
 extends TextureButton
+var pressed_once = false
+
+func _ready() -> void:
+	pressed_once = false
+	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -21,6 +26,9 @@ func _process(delta: float) -> void:
 func _on_pressed() -> void:
 	#custom_minimum_size = Vector2(100, 100)
 	#size = Vector2(100, 100)
+	pressed_once = true
+	var hintbox = get_node("hintbox")
+	hintbox.shouldModulate = false
 	if audio_player and not audio_player.playing:
 		audio_player.play()
 	disabled = true

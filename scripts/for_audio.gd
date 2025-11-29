@@ -16,3 +16,8 @@ func _on_practice():
 	get_tree().change_scene_to_file("res://scenes/practice_filler.tscn")
 	
  
+func restartbutton():
+	get_tree().change_scene_to_file("res://scenes/choose_difficulty.tscn")
+	
+func quitgame():
+	get_tree().quit()
